@@ -1,6 +1,7 @@
+import React from "react";
 import { Route, Routes } from 'react-router-dom';
 
-import '../../vendor/normalize.css'
+import './App.css'
 
 import Main from '../Main/Main'
 
@@ -13,9 +14,9 @@ function App() {
         <Route
           exact path='/'
           element={
-            <main>
+            <>
               <Main />
-            </main>
+            </>
           }
         />
         <Route

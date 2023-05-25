@@ -1,0 +1,147 @@
+.promo {
+  display: flex;
+  flex-direction: column;
+  background-color: #073042;
+  position: relative;
+  /* padding: 0 70px; */
+  padding: 0 calc((100vw - 1280px) / 2 + 70px);
+}
+
+.promo__header {
+  width: 100%;
+  min-height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo__logo {
+  max-width: 38px;
+  max-height: 38px;
+}
+
+.promo__button-container {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.promo__register {
+  color: white;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: .75rem;
+  line-height: 1.25;
+  list-style-type: none;
+  margin: 0 30px 0 0;
+}
+
+.promo__login {
+  color: black;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: .75rem;
+  line-height: 1.25;
+  list-style-type: none;
+  margin: 0;
+  padding: 8px 20px;
+  border-radius: 3px;
+  background-color: #3DDC84;
+}
+
+.promo__title {
+  max-width: 626px;
+  color: white;
+  margin: 0;
+  padding: 50px 0 406px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+}
+
+.promo__design {
+  max-width: 722px;
+  width: 100%;
+  min-height: 244px;
+  position: absolute;
+  bottom: 60px;
+  right: calc((100vw - 1280px) / 2 + 70px);
+  object-fit: cover;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1280px) {
+  .promo {
+    padding: 0 70px;
+  }
+
+  .promo__design {
+    right: 70px;
+  }
+}
+
+@media screen and (max-width: 984px) {
+  .promo {
+    margin: 0;
+    padding: 0 30px;
+  }
+  .promo__design {
+    max-width: 680px;
+    min-height: 230px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .promo__title {
+    margin: 0 auto;
+    text-align: center;
+    padding: 300px 0 440px;
+  }
+
+  .promo__design {
+    right: 44px;
+    margin: 0 auto;
+    bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 724px) {
+  .promo__design {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .promo {
+    padding: 0 14px;
+  }
+
+  .promo__register {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .promo__login {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .promo__title {
+    max-width: 300px;
+    padding: 183px 0 330px;
+    font-size: 30px;
+    line-height: 1.26;
+  }
+
+  .promo__design {
+    width: 100%;
+    min-height: 230px;
+    box-sizing: border-box;
+    bottom: 70px;
+  }
+}
