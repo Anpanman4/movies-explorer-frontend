@@ -1,4 +1,6 @@
 .about-project {
+  display: flex;
+  flex-direction: column;
   padding: 110px calc((100% - 1280px) / 2 + 70px);
 }
 

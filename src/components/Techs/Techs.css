@@ -1,0 +1,139 @@
+.techs {
+  display: flex;
+  flex-direction: column;
+  padding: 100px calc((100% - 1280px) / 2 + 70px);
+  background-color: #272727;
+}
+
+.techs__head {
+  width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  padding: 0 0 23px;
+  margin: 0;
+  border-bottom: solid 1px #DADADA;
+}
+
+.techs__title {
+  max-width: 400px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  margin: 0 auto;
+  padding: 90px 0 0;
+}
+
+.techs__subtitle {
+  max-width: 460px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  margin: 0 auto;
+  padding: 26px 0 0;
+}
+
+.techs__skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 90px);
+  gap: 10px;
+  justify-content: center;
+  margin: 0;
+  padding: 100px 0 0;
+}
+
+.techs__skill {
+  max-width: 90px;
+  width: 100%;
+  border-radius: 10px;
+  background: #303030;
+  color: #FFFFFF;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.04em;
+  list-style-type: none;
+  margin: 0;
+  padding: 21px 0 22px;
+}
+
+@media screen and (max-width: 1280px) {
+  .techs {
+    padding: 100px 70px;
+  }
+}
+
+
+@media screen and (max-width: 984px) {
+  .techs {
+    padding: 90px 50px;
+  }
+  
+  .techs__title {
+    padding-top: 80px;
+  }
+  
+  .techs__subtitle {
+    padding-top: 22px;
+  }
+
+  .techs__skills {
+    grid-template-columns: repeat(auto-fit, 84px);
+    padding-top: 83px;
+  }
+
+  .techs__skill {
+    max-width: 84px;
+  }
+}
+
+
+@media screen and (max-width: 475px) {
+  .techs {
+    padding: 70px 18px;
+  }
+
+  .techs__head {
+    font-size: 18px;
+    line-height: 1.22;
+    padding-bottom: 28px;
+  }
+  
+  .techs__title {
+    padding-top: 60px;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  
+  .techs__subtitle {
+    padding-top: 24px;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .techs__skills {
+    padding-top: 50px;
+  }
+
+  .techs__skill {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
