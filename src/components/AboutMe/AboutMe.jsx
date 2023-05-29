@@ -19,15 +19,15 @@ function AboutMe() {
               заниматься многими видами спорта для поддержания себя в хорошем духе. После того, как пройду курс по веб-разработке,
               серьезно хочу заняться поисками постоянной работы или различных стажировок.
             </p>
-            <p className="about__git">Github</p>
+            <a className="about__git" href="https://github.com/Anpanman4" target="_blank" rel="noreferrer">Github</a>
           </div>
         </article>
         <nav className="about__links">
           Портфолио
-          <a className="about__link" href="https://github.com/Anpanman4/how-to-learn" target="_blank" rel="noopener noreferrer">
+          <a className="about__link" href="https://github.com/Anpanman4/how-to-learn" target="_blank" rel="noreferrer">
             Статичный сайт<span className="about__href">↗</span>
           </a>
-          <a className="about__link" href="https://github.com/Anpanman4/russian-travel" target="_blank" rel="noopener noreferrer">
+          <a className="about__link" href="https://github.com/Anpanman4/russian-travel" target="_blank" rel="noreferrer">
             Адаптивный сайт<span className="about__href">↗</span>
           </a>
           <a className="about__link" href="https://github.com/Anpanman4/react-mesto-api-full-gha" target="_blank" rel="noopener noreferrer">

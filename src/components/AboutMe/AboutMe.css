@@ -72,7 +72,7 @@
   line-height: 1.57;
   color: #FFFFFF;
   margin: 0;
-  padding: 26px 0 0;
+  padding: 26px 0 100px;
 }
 
 .about__git {
@@ -84,7 +84,11 @@
   color: #FFFFFF;
   text-decoration: none;
   margin: 0;
-  padding: 100px 0 0;
+  padding: 0;
+}
+
+.about__git:hover {
+  opacity: .7;
 }
 
 .about__links {
@@ -112,6 +116,10 @@
   padding: 0;
   text-decoration: none;
   border-bottom: solid 1px #424242;
+}
+
+.about__link:hover {
+  opacity: .7;
 }
 
 .about__link:first-of-type {
@@ -156,11 +164,7 @@
     max-width: 364px;
     font-size: 12px;
     line-height: 1.5;
-    padding-top: 20px;
-  }
-
-  .about__git {
-    padding-top: 88px;
+    padding: 20px 0 88px;
   }
 
   .about__links {
@@ -203,10 +207,7 @@
   .about__text {
     font-size: 11px;
     line-height: 1.45;
-  }
-
-  .about__git {
-    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .about__links {

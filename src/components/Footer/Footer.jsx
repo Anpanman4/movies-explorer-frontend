@@ -14,8 +14,8 @@ function Footer () {
         <div className="footer__container">
           <p className="footer__copyright">&#169; {date}</p>
           <div className="footer__text-container">
-            <p className="footer__text">Яндекс.Практикум</p>
-            <p className="footer__text">Github</p>
+            <a className="footer__text" href="https://practicum.yandex.ru/" target="_blank" rel="noreferrer">Яндекс.Практикум</a>
+            <a className="footer__text" href="https://github.com/Anpanman4" target="_blank" rel="noreferrer">Github</a>
           </div>
         </div>
       </footer>

@@ -20,6 +20,11 @@
   max-height: 38px;
 }
 
+.promo__logo:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 .promo__button-container {
   display: flex;
   align-items: center;
@@ -37,6 +42,11 @@
   margin: 0 30px 0 0;
 }
 
+.promo__register:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 .promo__login {
   color: black;
   font-family: 'Inter';
@@ -49,6 +59,11 @@
   padding: 8px 20px;
   border-radius: 3px;
   background-color: #3DDC84;
+}
+
+.promo__login:hover {
+  cursor: pointer;
+  opacity: .8;
 }
 
 .promo__title {
