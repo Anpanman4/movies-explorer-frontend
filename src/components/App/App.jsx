@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css'
 
 import Main from '../Main/Main'
+import NotFound from '../NotFound/NotFound'
 
 function App() {
   // const navigate = useNavigate();
@@ -14,9 +15,7 @@ function App() {
         <Route
           exact path='/'
           element={
-            <>
-              <Main />
-            </>
+            <Main />
           }
         />
         <Route
@@ -27,6 +26,12 @@ function App() {
         />
         <Route
           exact path='/profile'
+        />
+        <Route
+          path='*'
+          element={
+            <NotFound />
+          }
         />
       </Routes>
     </>
