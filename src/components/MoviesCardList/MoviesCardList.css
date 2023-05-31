@@ -1,0 +1,30 @@
+.movie-list {
+  max-width: 1140px;
+  margin: 0;
+  padding: 70px calc((100vw - 1280px) / 2 + 70px) 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+  align-items: center;
+  gap: 32px 28px;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .movie-list {
+    padding: 70px 70px 10px;
+  }
+}
+
+@media screen and (max-width: 984px) {
+  .movie-list {
+    padding: 70px 30px 30px;
+    gap: 35px 24px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .movie-list {
+    padding: 40px 10px 30px;
+    gap: 16px;
+  }
+}
