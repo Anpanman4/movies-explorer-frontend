@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, Link, NavLink } from "react-router-dom";
 import './Header.css'
 
 import logo from '../../images/logo.svg'
 import icon from '../../images/profile-icon.svg'
 
+import Navigation from "./Navigation/Navigation";
+
 function Header() {
   const location = useLocation();
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleOpen = () => {
+    setIsClicked(true);
+  }
+
+  const handleClose = () => {
+    setIsClicked(false);
+  }
 
   return (
     <>
@@ -37,7 +49,16 @@ function Header() {
           <p className="header__profile-text">Аккаунт</p>
           <img className="header__profile-icon" src={icon} alt="Профиль" />
         </Link>
-        <button className="header__burger" />
+        <button className="header__burger" onClick={handleOpen} />
+        {isClicked
+          ? <Navigation handleClose={handleClose}>
+              <Link to="/profile" className="header__profile">
+                <p className="header__profile-text">Аккаунт</p>
+                <img className="header__profile-icon" src={icon} alt="Профиль" />
+              </Link>
+            </Navigation>
+          : ""
+        }
       </header>
       )}
     </>
