@@ -1,0 +1,171 @@
+.header {
+  min-height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 calc((100vw - 1280px) / 2 + 70px);
+  position: relative;
+}
+
+.header_color_blue {
+  background-color: #073042;
+  position: relative;
+}
+
+.header__logo {
+  max-width: 38px;
+  max-height: 38px;
+}
+
+.header__button-container {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.header__register {
+  color: white;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: .75rem;
+  line-height: 1.25;
+  list-style-type: none;
+  margin: 0 30px 0 0;
+  text-decoration: none;
+}
+
+.header__register:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+.header__login {
+  color: black;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: .75rem;
+  line-height: 1.25;
+  list-style-type: none;
+  margin: 0;
+  padding: 8px 20px;
+  border-radius: 3px;
+  background-color: #3DDC84;
+  text-decoration: none;
+}
+
+.header__login:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+.header__links {
+  max-width: 212px;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0 0 0 62px;
+  padding: 0;
+}
+
+.header__link {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.38;
+  color: #FFFFFF;
+  text-decoration: none;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.header__profile {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header__profile-text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  align-items: center;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+.header__profile-icon {
+  margin: 0 0 0 17px;
+  padding: 8px 7.5px;
+  background-color: #313131;
+  border-radius: 4px;
+}
+
+.header__burger {
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .header {
+    padding: 0 70px;
+  }
+}
+
+@media screen and (max-width: 984px) {
+  .header {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__links {
+    display: none;
+  }
+
+  .header__profile {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+    max-width: 44px;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 0;
+    background: url('../../images/burger.svg') center;
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .header {
+    padding: 0 14px;
+  }
+
+  .header__register {
+    font-size: 10px;
+    line-height: 1.6;
+    margin-right: 14px;
+  }
+
+  .header__login {
+    font-size: 10px;
+    line-height: 1.6;
+    padding: 5px 12px;
+  }
+
+  .header__burger {
+    max-width: 40px;
+    min-height: 43px;
+  }
+}

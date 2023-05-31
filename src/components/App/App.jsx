@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css'
 
 import Main from '../Main/Main'
+import Movies from '../Movies/Movies'
 import NotFound from '../NotFound/NotFound'
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
         />
         <Route
           exact path='/movies'
+          element={
+            <Movies />
+          }
         />
         <Route
           exact path='/saved-movies'
