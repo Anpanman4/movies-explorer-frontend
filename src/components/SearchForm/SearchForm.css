@@ -66,6 +66,11 @@
   background-color: #4285F4;
 }
 
+.search-form__search-button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 .search-form__film-container {
   max-width: 188px;
   width: 100%;
@@ -85,6 +90,11 @@
   width: 100%;
   min-height: 14px;
   height: 100%;
+}
+
+.search-form__status-button:hover {
+  cursor: pointer;
+  opacity: .8;
 }
 
 .search-form__text {

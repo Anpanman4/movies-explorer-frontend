@@ -38,10 +38,14 @@ function Header() {
           <img src={logo} alt="Логотип" />
         </Link>
         <div className="header__links">
-          <NavLink to="/movies" className="header__link">
+          <NavLink
+            to="/movies"
+            className={`header__link ${location.pathname === '/movies' && "header__link_active"}`}>
             Фильмы
           </NavLink>
-          <NavLink to="/saved-movies" className="header__link">
+          <NavLink
+            to="/saved-movies"
+            className={`header__link ${location.pathname === '/saved-movies' && "header__link_active"}`}>
             Сохранённые фильмы
           </NavLink>
         </div>

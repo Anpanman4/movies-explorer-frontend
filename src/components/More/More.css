@@ -20,6 +20,11 @@
   border-radius: 6px;
 }
 
+.more__button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 @media screen and (max-width: 1280px) {
   .more {
     padding: 0 70px;

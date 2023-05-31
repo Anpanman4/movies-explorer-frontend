@@ -65,9 +65,9 @@
   max-width: 212px;
   width: 100%;
   display: flex;
+  align-items: center;
   gap: 16px;
   text-decoration: none;
-  list-style-type: none;
   margin: 0 0 0 62px;
   padding: 0;
 }
@@ -75,7 +75,7 @@
 .header__link {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 13px;
   line-height: 1.38;
   color: #FFFFFF;
@@ -83,6 +83,10 @@
   white-space: nowrap;
   margin: 0;
   padding: 0;
+}
+
+.header__link_active {
+  font-weight: 500;
 }
 
 .header__profile {

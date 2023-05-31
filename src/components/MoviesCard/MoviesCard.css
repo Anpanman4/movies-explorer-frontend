@@ -56,6 +56,11 @@
   background-color: #313131;
 }
 
+.movie__button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 .movie__button_added {
   background-color: #EE3465;
 }
