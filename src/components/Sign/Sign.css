@@ -1,0 +1,137 @@
+.sign {
+  max-width: 396px;
+  min-height: 560px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: calc((100vh - 560px) / 2) 30px 0;
+}
+
+.sign__logo {
+  max-width: 38px;
+  max-height: 38px;
+}
+
+.sign__title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  margin: 40px 0;
+  padding: 0;
+}
+
+.sign__form {
+  height: 100%;
+  display: grid;
+  gap: 20px;
+  position: relative;
+}
+
+.sign__label {
+  display: grid;
+  gap: 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.21;
+  color: #8B8B8B;
+  position: relative;
+  padding: 0;
+}
+
+.sign__input {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.21;
+  background-color: #2F2F2F;
+  color: #FFFFFF;
+  padding: 15px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.sign__input-error {
+  color: #EE3465;
+}
+
+.sign__error {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.21;
+  color: #EE3465;
+  position: absolute;
+  left: 0;
+  bottom: -22px;
+}
+
+.sign__button {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  margin: 71px 0 0;
+  padding: 0;
+  width: 100%;
+  min-height: 45px;
+  background: #4285F4;
+  border: 0;
+  border-radius: 3px;
+}
+
+.sign__link-text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #8B8B8B;
+  align-self: center;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.sign__link {
+  color: #4285F4;
+  text-decoration: none;
+  margin: 0 0 0 6px;
+  padding: 0;
+}
+
+@media screen and (max-width: 525px) {
+  .sign {
+    padding-top: 56px;
+  }
+
+  .sign__logo {
+    align-self: center;
+  }
+
+  .sign__title {
+    margin: 50px auto 80px;
+  }
+
+  .sign__button {
+    font-size: 12px;
+    margin-top: 159px;
+  }
+
+  .sign__link-text {
+    font-size: 12px;
+    margin-top: 14px;
+  }
+
+  .sign__link {
+    margin-left: 7px;
+  }
+}

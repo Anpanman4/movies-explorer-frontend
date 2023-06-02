@@ -28,8 +28,8 @@ function Header() {
           <img src={logo} alt="Логотип" />
         </Link>
         <div className="header__button-container">
-          <Link to="/signin" className="header__register">Регистрация</Link>
-          <Link to="/signup" className="header__login">Войти</Link>
+          <Link to="/signup" className="header__register">Регистрация</Link>
+          <Link to="/signin" className="header__login">Войти</Link>
         </div>
       </header>
       ) : (

@@ -3,17 +3,29 @@ import { Route, Routes } from 'react-router-dom';
 
 import './App.css'
 
+import Login from '../Sign/Login/Login'
+import Register from '../Sign/Register/Register'
 import Main from '../Main/Main'
 import Movies from '../Movies/Movies'
 import SavedMovies from '../SavedMovies/SavedMovies'
 import NotFound from '../NotFound/NotFound'
 
 function App() {
-  // const navigate = useNavigate();
-
   return (
     <>
       <Routes>
+        <Route
+          exact path='/signin'
+          element={
+            <Login />
+          }
+        />
+        <Route
+          exact path='/signup'
+          element={
+            <Register />
+          }
+        />
         <Route
           exact path='/'
           element={

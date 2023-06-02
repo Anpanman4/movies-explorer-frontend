@@ -9,7 +9,7 @@ import remove from '../../images/remove.svg'
 
 function MoviesCard ({ card }) {
   const location = useLocation();
-  console.log(location)
+
   return (
     <>
     {location.pathname === "/saved-movies"
