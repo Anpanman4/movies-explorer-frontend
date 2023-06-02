@@ -18,6 +18,11 @@
   max-height: 38px;
 }
 
+.header__logo:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 .header__button-container {
   display: flex;
   align-items: center;
@@ -85,6 +90,11 @@
   padding: 0;
 }
 
+.header__link:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
 .header__link_active {
   font-weight: 500;
 }
@@ -93,6 +103,11 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+}
+
+.header__profile:hover {
+  cursor: pointer;
+  opacity: .8;
 }
 
 .header__profile-text {
