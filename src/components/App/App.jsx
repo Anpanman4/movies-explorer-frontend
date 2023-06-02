@@ -5,6 +5,7 @@ import './App.css'
 
 import Main from '../Main/Main'
 import Movies from '../Movies/Movies'
+import SavedMovies from '../SavedMovies/SavedMovies'
 import NotFound from '../NotFound/NotFound'
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
         />
         <Route
           exact path='/saved-movies'
+          element={
+            <SavedMovies />
+          }
         />
         <Route
           exact path='/profile'
