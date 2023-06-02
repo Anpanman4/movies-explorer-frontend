@@ -1,0 +1,131 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.profile__title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  margin: 74px 0 0;
+}
+
+.profile__container {
+  max-width: 410px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  margin: 123px 0 0;
+}
+
+.profile__info-container {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 0 17px;
+  border-bottom: solid 1px #424242;
+}
+
+.profile__info-container:last-of-type {
+  padding: 0;
+  border-bottom: 0;
+}
+
+.profile__info-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+.profile__info-value {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  align-self: flex-end;
+}
+
+.profile__button-edit {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.21;
+  color: #FFF;
+  border: 0;
+  background-color: #202020;
+  margin: 220px 0 0;
+  padding: 0;
+}
+
+.profile__button-edit:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+.profile__button-exit {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.21;
+  color: #EE3465;
+  border: 0;
+  background-color: #202020;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.profile__button-exit:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__title {
+    margin-top: 236px;
+  }
+
+  .profile__container {
+    margin-top: 96px;
+  }
+
+  .profile__button-edit {
+    margin-top: 210px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .profile__title {
+    margin-top: 70px;
+  }
+
+  .profile__container {
+    margin-top: 80px;
+  }
+
+  .profile__button-edit {
+    margin-top: 379px;
+    font-size: 12px;
+  }
+
+  .profile__button-exit {
+    font-size: 12px;
+  }
+}

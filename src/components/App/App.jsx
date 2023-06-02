@@ -8,6 +8,7 @@ import Register from '../Sign/Register/Register'
 import Main from '../Main/Main'
 import Movies from '../Movies/Movies'
 import SavedMovies from '../SavedMovies/SavedMovies'
+import Profile from '../Profile/Profile'
 import NotFound from '../NotFound/NotFound'
 
 function App() {
@@ -46,6 +47,9 @@ function App() {
         />
         <Route
           exact path='/profile'
+          element={
+            <Profile />
+          }
         />
         <Route
           path='*'

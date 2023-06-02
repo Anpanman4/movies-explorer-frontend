@@ -108,7 +108,7 @@
   padding: 0;
 }
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 475px) {
   .sign {
     padding-top: 56px;
   }
