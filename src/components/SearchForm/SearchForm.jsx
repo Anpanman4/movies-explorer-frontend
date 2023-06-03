@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import './SearchForm.css'
 
@@ -10,10 +10,10 @@ function SearchForm () {
   return (
     <>
       <section className="search-form">
-        <form className="search-form__container">
+        <form name="search-form" className="search-form__container">
           <div className="search-form__input-container">
             <img className="search-form__img" src={search} alt="Поиск" />
-            <input className="search-form__input" type="text" placeholder="Фильм" />
+            <input className="search-form__input" name="filmName" type="text" placeholder="Фильм" />
             <button className="search-form__search-button">Найти</button>
           </div>
           <div className="search-form__film-container">

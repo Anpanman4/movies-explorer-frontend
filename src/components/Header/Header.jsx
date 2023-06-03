@@ -53,14 +53,9 @@ function Header() {
           <p className="header__profile-text">Аккаунт</p>
           <img className="header__profile-icon" src={icon} alt="Профиль" />
         </Link>
-        <button className="header__burger" onClick={handleOpen} />
+        <button className="header__burger" onClick={handleOpen} type="button" />
         {isClicked
-          ? <Navigation handleClose={handleClose}>
-              <Link to="/profile" className="header__profile">
-                <p className="header__profile-text">Аккаунт</p>
-                <img className="header__profile-icon" src={icon} alt="Профиль" />
-              </Link>
-            </Navigation>
+          ? <Navigation handleClose={handleClose} />
           : ""
         }
       </header>

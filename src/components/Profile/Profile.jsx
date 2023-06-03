@@ -21,8 +21,8 @@ function Profile () {
               <p className="profile__info-value">anpanman@yandex.ru</p>
             </div>
           </div>
-          <button className="profile__button-edit">Редактировать</button>
-          <button className="profile__button-exit">Выйти из аккаунта</button>
+          <button className="profile__button-edit" type="button">Редактировать</button>
+          <button className="profile__button-exit" type="submit">Выйти из аккаунта</button>
         </section>
       </main>
     </>

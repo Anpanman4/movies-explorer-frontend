@@ -9,7 +9,7 @@ function Navigation({ handleClose }) {
   return (
     <div className="navigation__overlay">
       <section className="navigation">
-        <button onClick={handleClose} className="navigation__close-button" />
+        <button onClick={handleClose} className="navigation__close-button" type="button" />
         <nav>
           <ul className="navigation__container">
             <li>

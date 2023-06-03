@@ -17,10 +17,10 @@ function Footer () {
           <nav>
             <ul className="footer__text-container">
               <li>
-                <Link className="footer__text" to="https://practicum.yandex.ru/" target="_blank">Яндекс.Практикум</Link>
+                <Link className="footer__text" to="https://practicum.yandex.ru/" target="_blank" rel='noopener noreferrer'>Яндекс.Практикум</Link>
               </li>
               <li>
-                <Link className="footer__text" to="https://github.com/Anpanman4" target="_blank">Github</Link>
+                <Link className="footer__text" to="https://github.com/Anpanman4" target="_blank" rel='noopener noreferrer'>Github</Link>
               </li>
             </ul>
           </nav>

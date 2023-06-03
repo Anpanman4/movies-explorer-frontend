@@ -2,7 +2,7 @@ import React from "react";
 
 import './Promo.css'
 
-import design from '../../images/design.svg'
+import design from '../../../images/design.svg'
 
 function Promo() {
   return (

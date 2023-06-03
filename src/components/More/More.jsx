@@ -4,9 +4,9 @@ import './More.css'
 
 function More () {
   return (
-    <section className="more">
-      <button className="more__button">Ещё</button>
-    </section>
+    <div className="more">
+      <button className="more__button" type="submit">Ещё</button>
+    </div>
   )
 }
 

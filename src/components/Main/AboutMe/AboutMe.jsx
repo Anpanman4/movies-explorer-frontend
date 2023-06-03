@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import './AboutMe.css';
 
-import avatar from '../../images/avatar.jpg';
+import avatar from '../../../images/avatar.jpg';
 
 function AboutMe() {
   return (
@@ -20,19 +20,19 @@ function AboutMe() {
               заниматься многими видами спорта для поддержания себя в хорошем духе. После того, как пройду курс по веб-разработке,
               серьезно хочу заняться поисками постоянной работы или различных стажировок.
             </p>
-            <Link className="about__git" to="https://github.com/Anpanman4" target="_blank" rel="noreferrer">Github</Link>
+            <Link className="about__git" to="https://github.com/Anpanman4" target="_blank" rel='noopener noreferrer'>Github</Link>
           </div>
         </article>
         <h3 className="about__portfolio-title">Портфолио</h3>
         <nav>
           <ul className="about__links">
             <li className="about__link">
-              <Link className="about__link-text" to="https://github.com/Anpanman4/how-to-learn" target="_blank" rel="noreferrer">
+              <Link className="about__link-text" to="https://github.com/Anpanman4/how-to-learn" target="_blank" rel='noopener noreferrer'>
                 Статичный сайт<span className="about__href">↗</span>
               </Link>
             </li>
             <li className="about__link">
-              <Link className="about__link-text" to="https://github.com/Anpanman4/russian-travel" target="_blank" rel="noreferrer">
+              <Link className="about__link-text" to="https://github.com/Anpanman4/russian-travel" target="_blank" rel='noopener noreferrer'>
                 Адаптивный сайт<span className="about__href">↗</span>
               </Link>
             </li>

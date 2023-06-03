@@ -20,9 +20,9 @@ function Sign ({
           <img src={logo} alt="Логотип" />
         </Link>
         <h1 className="sign__title">{title}</h1>
-        <form className="sign__form" noValidate>
+        <form name="auth-form" className="sign__form" noValidate>
           {children}
-          <button className="sign__button">{buttonTitle}</button>
+          <button className="sign__button" type="submit">{buttonTitle}</button>
         </form>
         <p className="sign__link-text">
           {preLinkText}
