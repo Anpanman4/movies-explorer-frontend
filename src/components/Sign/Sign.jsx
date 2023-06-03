@@ -14,20 +14,22 @@ function Sign ({
   children,
 }) {
   return (
-    <section className="sign">
-      <Link to="/" className="sign__logo">
-        <img src={logo} alt="Логотип" />
-      </Link>
-      <h1 className="sign__title">{title}</h1>
-      <form className="sign__form" noValidate>
-        {children}
-        <button className="sign__button">{buttonTitle}</button>
-      </form>
-      <p className="sign__link-text">
-        {preLinkText}
-        <Link to={link} className="sign__link">{linkText}</Link>
-      </p>
-    </section>
+    <main>
+      <section className="sign">
+        <Link to="/" className="sign__logo">
+          <img src={logo} alt="Логотип" />
+        </Link>
+        <h1 className="sign__title">{title}</h1>
+        <form className="sign__form" noValidate>
+          {children}
+          <button className="sign__button">{buttonTitle}</button>
+        </form>
+        <p className="sign__link-text">
+          {preLinkText}
+          <Link to={link} className="sign__link">{linkText}</Link>
+        </p>
+      </section>
+    </main>
   )
 }
 

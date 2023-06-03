@@ -12,9 +12,11 @@ function Movies() {
   return (
     <>
       <Header />
-      <SearchForm />
-      <MoviesCardList />
-      <More />
+      <main>
+        <SearchForm />
+        <MoviesCardList />
+        <More />
+      </main>
       <Footer />
     </>
   )

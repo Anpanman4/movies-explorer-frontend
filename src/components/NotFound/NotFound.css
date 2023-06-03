@@ -34,9 +34,11 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.21;
+  background-color: #202020;
   color: #4285F4;
   margin: 184px 0 0;
   padding: 0;
+  border: 0;
 }
 
 @media screen and (max-width: 525px) {

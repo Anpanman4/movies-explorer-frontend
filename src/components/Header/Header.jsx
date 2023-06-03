@@ -27,17 +27,17 @@ function Header() {
         <Link to="/" className="header__logo">
           <img src={logo} alt="Логотип" />
         </Link>
-        <div className="header__button-container">
+        <nav className="header__button-container">
           <Link to="/signup" className="header__register">Регистрация</Link>
           <Link to="/signin" className="header__login">Войти</Link>
-        </div>
+        </nav>
       </header>
       ) : (
       <header className="header">
         <Link to="/" className="header__logo">
           <img src={logo} alt="Логотип" />
         </Link>
-        <div className="header__links">
+        <nav className="header__links">
           <NavLink
             to="/movies"
             className={`header__link ${location.pathname === '/movies' && "header__link_active"}`}>
@@ -48,7 +48,7 @@ function Header() {
             className={`header__link ${location.pathname === '/saved-movies' && "header__link_active"}`}>
             Сохранённые фильмы
           </NavLink>
-        </div>
+        </nav>
         <Link to="/profile" className="header__profile">
           <p className="header__profile-text">Аккаунт</p>
           <img className="header__profile-icon" src={icon} alt="Профиль" />

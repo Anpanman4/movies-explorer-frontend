@@ -28,14 +28,21 @@
   width: 100%;
   min-height: 22px;
   align-self: flex-end;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url(../../../images/close-button.svg) center;
 }
 
 .navigation__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 28px;
+  margin: 0;
   padding: 110px 0 0;
+  list-style-type: none;
 }
 
 .navigation__link {
@@ -44,7 +51,6 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 1.21;
-  text-align: center;
   color: #FFFFFF;
   text-decoration: none;
   position: relative;
