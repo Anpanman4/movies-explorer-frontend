@@ -1,11 +1,13 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import './Navigation.css'
 
 import icon from '../../../images/profile-icon.svg'
 
 function Navigation({ handleClose }) {
+  const navigate = useNavigate();
+
   return (
     <div className="navigation__overlay">
       <section className="navigation">
@@ -23,7 +25,7 @@ function Navigation({ handleClose }) {
             </li>
           </ul>
         </nav>
-        <button to="/profile" className="navigation__profile">
+        <button className="navigation__profile" type="button" onClick={() => navigate("/profile")}>
           Аккаунт
           <img className="navigation__profile-icon" src={icon} alt="Профиль" />
         </button>

@@ -6,7 +6,7 @@
 
 .about-project__title {
   width: 100%;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -26,7 +26,7 @@
 }
 
 .about-project__small-title {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -38,7 +38,7 @@
 }
 
 .about-project__text {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -63,7 +63,7 @@
   padding: 9px 0;
   width: 100%;
   min-height: 18px;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -87,7 +87,7 @@
 .about-project__subtitle {
   margin: 0;
   padding: 0;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

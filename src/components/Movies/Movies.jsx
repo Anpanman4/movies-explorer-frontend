@@ -6,8 +6,6 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList"
 import More from "../More/More"
 import Footer from "../Footer/Footer"
 
-import './Movies.css'
-
 function Movies() {
   return (
     <>

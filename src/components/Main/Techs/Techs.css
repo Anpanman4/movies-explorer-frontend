@@ -7,7 +7,7 @@
 
 .techs__head {
   width: 100%;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -21,7 +21,7 @@
 
 .techs__title {
   max-width: 400px;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 50px;
@@ -35,7 +35,7 @@
 
 .techs__subtitle {
   max-width: 460px;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -62,7 +62,7 @@
   border-radius: 10px;
   background: #303030;
   color: #FFFFFF;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

@@ -6,7 +6,7 @@
 
 .about__head {
   width: 100%;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -43,7 +43,7 @@
 }
 
 .about__title {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 50px;
@@ -55,7 +55,7 @@
 }
 
 .about__subtitle {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -67,7 +67,7 @@
 
 .about__text {
   max-width: 600px;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -78,7 +78,7 @@
 }
 
 .about__git {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -94,7 +94,7 @@
 }
 
 .about__portfolio-title {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -132,7 +132,7 @@
 .about__link-text {
   display: flex;
   justify-content: space-between;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 30px;

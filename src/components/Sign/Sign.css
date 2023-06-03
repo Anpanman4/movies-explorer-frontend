@@ -20,7 +20,7 @@
 }
 
 .sign__title {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -40,7 +40,7 @@
 .sign__label {
   display: grid;
   gap: 10px;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -51,7 +51,7 @@
 }
 
 .sign__input {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -63,12 +63,16 @@
   border-radius: 8px;
 }
 
+.sign__input:focus {
+  outline: solid 1px #FFF;
+}
+
 .sign__input-error {
   color: #EE3465;
 }
 
 .sign__error {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -80,7 +84,7 @@
 }
 
 .sign__button {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -102,7 +106,7 @@
 
 
 .sign__link-text {
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
