@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Routes } from 'react-router-dom';
 
 import './App.css'
@@ -12,6 +12,9 @@ import Profile from '../Profile/Profile'
 import NotFound from '../NotFound/NotFound'
 
 function App() {
+  const [name, setName] = useState("Алексей")
+  const [email, setEmail] = useState("anpanman@mail.ru")
+
   return (
     <>
       <Routes>
@@ -48,7 +51,10 @@ function App() {
         <Route
           exact path='/profile'
           element={
-            <Profile />
+            <Profile
+              name={name}
+              email={email}
+            />
           }
         />
         <Route

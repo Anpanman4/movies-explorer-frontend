@@ -10,7 +10,7 @@ function AboutMe() {
     <>
       <section className="about">
         <h2 className="about__head">Студент</h2>
-        <article className="about__container">
+        <div className="about__container">
           <img src={avatar} alt="Аватарка" className="about__avatar" />
           <div className="about__info-container">
             <h3 className="about__title">Алексей</h3>
@@ -22,7 +22,7 @@ function AboutMe() {
             </p>
             <Link className="about__git" to="https://github.com/Anpanman4" target="_blank" rel='noopener noreferrer'>Github</Link>
           </div>
-        </article>
+        </div>
         <h3 className="about__portfolio-title">Портфолио</h3>
         <nav>
           <ul className="about__links">

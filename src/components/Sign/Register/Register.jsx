@@ -11,15 +11,19 @@ function Register () {
       linkText="Войти"
       link="/signin"
     >
-      <label className="sign__label" for="email">
+      <label className="sign__label">
+        Имя
+        <input className="sign__input" placeholder="Имя" type="text" id="name" />
+      </label>
+      <label className="sign__label">
         E-mail
         <input className="sign__input" placeholder="Почта" type="text" id="email" />
       </label>
-      <label className="sign__label" for="password">
+      <label className="sign__label">
         Пароль
-        <input className="sign__input" placeholder="Пароль" type="text" id="password" />
-        <span className="sign__error">Что-то пошло не так...</span>
+        <input className="sign__input" placeholder="Пароль" type="password" id="password" />
       </label>
+      <span className="sign__error">Что-то пошло не так...</span>
     </Sign>
   )
 }

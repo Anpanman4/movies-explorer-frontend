@@ -23,10 +23,10 @@ function Navigation({ handleClose }) {
             </li>
           </ul>
         </nav>
-        <Link to="/profile" className="navigation__profile">
-          <p className="navigation__profile-text">Аккаунт</p>
+        <button to="/profile" className="navigation__profile">
+          Аккаунт
           <img className="navigation__profile-icon" src={icon} alt="Профиль" />
-        </Link>
+        </button>
       </section>
     </div>
   )

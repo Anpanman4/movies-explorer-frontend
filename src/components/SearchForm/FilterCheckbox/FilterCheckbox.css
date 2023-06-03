@@ -2,8 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   color: #FFF;
+  cursor: pointer;
+}
+
+.filtercheckbox__visible-input:hover {
+  opacity: .7;
 }
 
 .filtercheckbox__input {

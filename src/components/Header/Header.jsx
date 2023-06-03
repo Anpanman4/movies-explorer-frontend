@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, Link, NavLink } from "react-router-dom";
+import { useLocation, Link, NavLink, useNavigate } from "react-router-dom";
 import './Header.css'
 
 import logo from '../../images/logo.svg'
@@ -9,6 +9,7 @@ import Navigation from "./Navigation/Navigation";
 
 function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [isClicked, setIsClicked] = useState(false);
 
@@ -28,8 +29,8 @@ function Header() {
           <img src={logo} alt="Логотип" />
         </Link>
         <nav className="header__button-container">
-          <Link to="/signup" className="header__register">Регистрация</Link>
-          <Link to="/signin" className="header__login">Войти</Link>
+          <button className="header__register" type="button" onClick={() => navigate("/signup")}>Регистрация</button>
+          <button className="header__login" type="button" onClick={() => navigate("/signin")}>Войти</button>
         </nav>
       </header>
       ) : (
@@ -49,10 +50,10 @@ function Header() {
             Сохранённые фильмы
           </NavLink>
         </nav>
-        <Link to="/profile" className="header__profile">
-          <p className="header__profile-text">Аккаунт</p>
+        <button className="header__profile" type="button" onClick={() => navigate("/profile")}>
+          Аккаунт
           <img className="header__profile-icon" src={icon} alt="Профиль" />
-        </Link>
+        </button>
         <button className="header__burger" onClick={handleOpen} type="button" />
         {isClicked
           ? <Navigation handleClose={handleClose} />

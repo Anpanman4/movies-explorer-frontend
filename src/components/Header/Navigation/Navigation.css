@@ -35,6 +35,11 @@
   background: url(../../../images/close-button.svg) center;
 }
 
+.navigation__close-button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 .navigation__container {
   display: flex;
   flex-direction: column;
@@ -65,20 +70,23 @@
 .navigation__profile {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  margin-top: auto;
-}
-
-.navigation__profile-text {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   align-items: center;
+  background-color: #202020;
   color: #FFFFFF;
-  margin: 0;
+  border: 0;
+  margin-top: auto;
   padding: 0;
+  text-decoration: none;
+}
+
+.navigation__profile:hover {
+  cursor: pointer;
+  opacity: .7;
 }
 
 .navigation__profile-icon {

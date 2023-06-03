@@ -41,6 +41,11 @@
   border: 0;
 }
 
+.not-found__button:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
 @media screen and (max-width: 525px) {
   .not-found__title {
     font-size: 80px;

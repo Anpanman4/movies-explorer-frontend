@@ -39,6 +39,8 @@
   list-style-type: none;
   margin: 0 30px 0 0;
   text-decoration: none;
+  background-color: #073042;
+  border: 0;
 }
 
 .header__register:hover {
@@ -57,6 +59,7 @@
   margin: 0;
   padding: 8px 20px;
   border-radius: 3px;
+  border: 0;
   background-color: #3DDC84;
   text-decoration: none;
 }
@@ -102,24 +105,23 @@
 .header__profile {
   display: flex;
   align-items: center;
-  text-decoration: none;
-}
-
-.header__profile:hover {
-  cursor: pointer;
-  opacity: .8;
-}
-
-.header__profile-text {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   align-items: center;
+  background-color: #202020;
   color: #FFFFFF;
+  border: 0;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+}
+
+.header__profile:hover {
+  cursor: pointer;
+  opacity: .8;
 }
 
 .header__profile-icon {
@@ -131,6 +133,11 @@
 
 .header__burger {
   display: none;
+}
+
+.header__burger:hover {
+  cursor: pointer;
+  opacity: .8;
 }
 
 @media screen and (max-width: 1280px) {

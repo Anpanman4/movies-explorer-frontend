@@ -14,6 +14,11 @@
   max-height: 38px;
 }
 
+.sign__logo:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 .sign__title {
   font-family: 'Inter';
   font-style: normal;
@@ -68,10 +73,10 @@
   font-weight: 400;
   font-size: 10px;
   line-height: 1.21;
+  position: relative;
   color: #EE3465;
-  position: absolute;
   left: 0;
-  bottom: -22px;
+  bottom: 12px;
 }
 
 .sign__button {
@@ -81,7 +86,7 @@
   font-size: 14px;
   line-height: 1.21;
   color: #FFFFFF;
-  margin: 71px 0 0;
+  margin: 39px 0 0;
   padding: 0;
   width: 100%;
   min-height: 45px;
@@ -89,6 +94,12 @@
   border: 0;
   border-radius: 3px;
 }
+
+.sign__button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 
 .sign__link-text {
   font-family: 'Inter';
@@ -109,6 +120,11 @@
   padding: 0;
 }
 
+.sign__link:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
 @media screen and (max-width: 475px) {
   .sign {
     padding-top: 56px;
@@ -124,7 +140,7 @@
 
   .sign__button {
     font-size: 12px;
-    margin-top: 159px;
+    margin-top: 127px;
   }
 
   .sign__link-text {
