@@ -4,6 +4,7 @@
   padding: 70px calc((100vw - 1280px) / 2 + 70px) 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+  justify-content: center;
   align-items: center;
   gap: 32px 28px;
   list-style-type: none;

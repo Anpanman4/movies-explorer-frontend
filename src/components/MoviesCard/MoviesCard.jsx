@@ -14,28 +14,28 @@ function MoviesCard ({ card }) {
     <>
     {location.pathname === "/saved-movies"
       ? <li className="movie">
-        <div className="movie__container">
-          <h3 className="movie__title">{card.name}</h3>
-          <p className="movie__time">{card.time}</p>
-        </div>
-        <img className="movie__img" src={card.src} alt={`Изображение фильма${card.name}`} />
-        <button className="movie__button" type="submit">
-          <img src={remove} alt="Удалить" />
-        </button>
-      </li>
+          <div className="movie__container">
+            <h3 className="movie__title">{card.name}</h3>
+            <p className="movie__time">{card.time}</p>
+          </div>
+          <img className="movie__img" src={card.src} alt={`Изображение фильма${card.name}`} />
+          <button className="movie__button" type="submit">
+            <img src={remove} alt="Удалить" />
+          </button>
+        </li>
       : <li className="movie">
-        <div className="movie__container">
-          <h3 className="movie__title">{card.name}</h3>
-          <p className="movie__time">{card.time}</p>
-        </div>
-        <img className="movie__img" src={card.src} alt={`Изображение фильма${card.name}`} />
-        {card.add
-          ? <button className="movie__button"  type="submit">Сохранить</button>
-          : <button className="movie__button movie__button_added" type="submit">
-              <img src={checkMark} alt="Галочка" />
-            </button>
-        }
-      </li>
+          <div className="movie__container">
+            <h3 className="movie__title">{card.name}</h3>
+            <p className="movie__time">{card.time}</p>
+          </div>
+          <img className="movie__img" src={card.src} alt={`Изображение фильма${card.name}`} />
+          {card.add
+            ? <button className="movie__button"  type="submit">Сохранить</button>
+            : <button className="movie__button movie__button_added" type="submit">
+                <img src={checkMark} alt="Галочка" />
+              </button>
+          }
+        </li>
     }
     </>
   )

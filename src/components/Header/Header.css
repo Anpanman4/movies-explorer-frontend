@@ -168,7 +168,7 @@
     min-height: 44px;
     margin: 0;
     padding: 0;
-    background: url('../../images/burger.svg') center;
+    background: url('../../images/burger.svg') center no-repeat;
     border: 0;
   }
 }
@@ -191,7 +191,10 @@
   }
 
   .header__burger {
-    max-width: 40px;
-    min-height: 43px;
+    max-width: 22px;
+    min-height: 20.5px;
+    margin-right: 9px;
+    object-fit: cover;
+    background-size: cover;
   }
 }

@@ -113,6 +113,8 @@
   }
 
   .about-project__text {
+    font-size: 12px;
+    line-height: 1.5;
     padding: 22px 0 0;
   }
 

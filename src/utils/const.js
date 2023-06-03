@@ -10,7 +10,7 @@ const arr = [
     _id: 2,
     name: "погоня",
     time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
+    src: "https://img3.akspic.ru/previews/5/5/4/1/7/171455/171455-zhivopis-illustracia-art-voda-oblako-500x.jpg",
     add: false
   },
   {
