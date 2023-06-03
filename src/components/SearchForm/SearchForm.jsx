@@ -3,16 +3,10 @@ import React, { useState } from "react";
 import './SearchForm.css'
 
 import search from "../../images/search.svg"
-// import onButton from "../../images/on-button.svg"
-// import offButton from "../../images/off-button.svg"
+
+import FilterCheckbox from "./FilterCheckbox/FilterCheckbox";
 
 function SearchForm () {
-  const [isButtonActive, setIsButtonActive] = useState(true);
-
-  const changeStatus = () => {
-    isButtonActive ? setIsButtonActive(false) : setIsButtonActive(true);
-  }
-
   return (
     <>
       <section className="search-form">
@@ -23,11 +17,7 @@ function SearchForm () {
             <button className="search-form__search-button">Найти</button>
           </div>
           <div className="search-form__film-container">
-            { isButtonActive
-              ? <input type="checkbox" className="search-form__status-button" onClick={changeStatus} />
-              : <input type="checkbox" className="search-form__status-button" onClick={changeStatus} />
-            }
-            <p className="search-form__text">Короткометражки</p>
+            <FilterCheckbox />
           </div>
         </form>
       </section>
