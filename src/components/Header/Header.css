@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin: 0;
   padding: 0 calc((100vw - 1280px) / 2 + 70px);
   position: relative;
 }
@@ -78,6 +78,7 @@
   text-decoration: none;
   margin: 0 0 0 62px;
   padding: 0;
+  list-style-type: none;
 }
 
 .header__link {

@@ -38,17 +38,23 @@ function Header() {
         <Link to="/" className="header__logo">
           <img src={logo} alt="Логотип" />
         </Link>
-        <nav className="header__links">
-          <NavLink
-            to="/movies"
-            className={`header__link ${location.pathname === '/movies' && "header__link_active"}`}>
-            Фильмы
-          </NavLink>
-          <NavLink
-            to="/saved-movies"
-            className={`header__link ${location.pathname === '/saved-movies' && "header__link_active"}`}>
-            Сохранённые фильмы
-          </NavLink>
+        <nav>
+          <ul className="header__links">
+            <li>
+              <NavLink
+                to="/movies"
+                className={`header__link ${location.pathname === '/movies' && "header__link_active"}`}>
+                Фильмы
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/saved-movies"
+                className={`header__link ${location.pathname === '/saved-movies' && "header__link_active"}`}>
+                Сохранённые фильмы
+              </NavLink>
+            </li>
+          </ul>
         </nav>
         <button className="header__profile" type="button" onClick={() => navigate("/profile")}>
           Аккаунт

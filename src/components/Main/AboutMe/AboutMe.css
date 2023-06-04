@@ -1,6 +1,7 @@
 .about {
   display: flex;
   flex-direction: column;
+  margin: 0;
   padding: 110px calc((100% - 1280px) / 2 + 70px) 125px;
 }
 
@@ -40,6 +41,8 @@
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
+  object-position: center;
+  justify-self: flex-end;
 }
 
 .about__title {
@@ -158,7 +161,7 @@
 
 @media screen and (max-width: 984px) {
   .about {
-    padding: 90px 50px;
+    padding: 90px 50px 80px;
   }
 
   .about__avatar {
@@ -198,10 +201,17 @@
     padding: 70px 14px;
   }
 
+  .about__head {
+    font-size: 18px;
+    line-height: 1.21;
+    padding-bottom: 28px;
+  }
+
   .about__container {
     display: flex;
     flex-direction: column;
     margin-top: 60px;
+    gap: 40px;
   }
 
   .about__avatar {
@@ -213,7 +223,6 @@
   }
 
   .about__title {
-    padding-top: 40px;
     font-size: 30px;
     line-height: 1.2;
   }
@@ -238,6 +247,7 @@
 
   .about__link {
     margin: 20px 0 19px;
+    padding-bottom: 19px;
   }
 
   .about__link-text {

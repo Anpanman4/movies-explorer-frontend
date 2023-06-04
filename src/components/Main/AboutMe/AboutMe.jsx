@@ -23,7 +23,7 @@ function AboutMe() {
             <Link className="about__git" to="https://github.com/Anpanman4" target="_blank" rel='noopener noreferrer'>Github</Link>
           </div>
         </div>
-        <h3 className="about__portfolio-title">Портфолио</h3>
+        <h4 className="about__portfolio-title">Портфолио</h4>
         <nav>
           <ul className="about__links">
             <li className="about__link">

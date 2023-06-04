@@ -56,10 +56,17 @@
   font-weight: 400;
   font-size: 11px;
   line-height: 1.21;
+  background-color: #202020;
   color: #FFFFFF;
+  border: 0;
   margin: 0;
   padding: 0;
   align-self: flex-end;
+}
+
+.profile__info-value:focus {
+  outline: solid 1px #FFF;
+  border-radius: 2px;
 }
 
 .profile__button{

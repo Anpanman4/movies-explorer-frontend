@@ -21,7 +21,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 19px 30px 19px 25px;
+  padding: 19px 30px 19px 19px;
   border-top-left-radius: 9px;
   border-bottom-left-radius: 9px;
   box-sizing: border-box;
@@ -36,7 +36,7 @@
 
 .search-form__input {
   width: 100%;
-  min-width: 200px;
+  min-width: 180px;
   font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -48,6 +48,11 @@
   background-color: #2F2F2F;
   border: 0;
   box-sizing: border-box;
+}
+
+.search-form__input:focus {
+  outline: solid 1px rgba(255, 255, 255, .2);
+  border-radius: 5px;
 }
 
 .search-form__search-button {
@@ -99,7 +104,11 @@
   .search-form__container {
     padding-bottom: 109px;
   }
-  
+
+  .search-form__input-container {
+    padding-right: 19px;
+  }
+
   .search-form__film-container {
     padding: 16px 20px 16px 19px;
   }
