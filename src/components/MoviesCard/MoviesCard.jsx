@@ -25,7 +25,7 @@ function MoviesCard ({ card }) {
         </li>
       : <li className="movie">
           <div className="movie__container">
-            <h3 className="movie__title">{card.name}</h3>
+            <h2 className="movie__title">{card.name}</h2>
             <p className="movie__time">{card.time}</p>
           </div>
           <img className="movie__img" src={card.src} alt={`Изображение фильма${card.name}`} />

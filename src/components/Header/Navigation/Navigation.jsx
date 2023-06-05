@@ -18,28 +18,22 @@ function Navigation({ handleClose }) {
             <li>
               <NavLink to="/" className="navigation__link">
                 Главная
-                {location.pathname === "/"
-                ? <div className="navigation__link-active"></div>
-                : ""
-                }
               </NavLink>
             </li>
             <li>
-              <NavLink to="/movies" className="navigation__link">
+              <NavLink
+                to="/movies"
+                className={`navigation__link ${location.pathname === "/movies" && "navigation__link_active"}`}
+              >
                 Фильмы
-                {location.pathname === "/movies"
-                ? <div className="navigation__link-active"></div>
-                : ""
-                }
               </NavLink>
             </li>
             <li>
-              <NavLink to="/saved-movies" className="navigation__link">
+              <NavLink
+                to="/saved-movies"
+                className={`navigation__link ${location.pathname === "/saved-movies" && "navigation__link_active"}`}
+              >
                 Сохранённые фильмы
-                {location.pathname === "/saved-movies"
-                ? <div className="navigation__link-active"></div>
-                : ""
-                }
               </NavLink>
             </li>
           </ul>
