@@ -1,0 +1,10 @@
+@import url('../../vendor/fonts/stylesheet.css');
+@import url('../../vendor/normalize.css');
+
+.root {
+  display: flex;
+  flex-direction: column;
+  background-color: #202020;
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0 auto;
+}

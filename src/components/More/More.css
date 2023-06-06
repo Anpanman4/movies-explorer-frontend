@@ -1,0 +1,44 @@
+.more {
+  display: flex;
+  align-content: center;
+  margin: 50px 0 80px;
+  padding: 0 calc((100vw - 1280px) / 2 + 70px);
+}
+
+.more__button {
+  width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 11px 0 9px;
+  background-color: #2F2F2F;
+  border: 0;
+  border-radius: 6px;
+}
+
+.more__button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+@media screen and (max-width: 1280px) {
+  .more {
+    padding: 0 70px;
+  }
+}
+
+@media screen and (max-width: 984px) {
+  .more {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .more {
+    padding: 0 10px;
+  }
+}
