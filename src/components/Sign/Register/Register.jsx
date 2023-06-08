@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Sign from "../Sign"
+
+import { regForName, reqForEmail } from "../../../utils/const";
 
 function Register ({
   handleRegister,
@@ -9,7 +11,8 @@ function Register ({
     name: "",
     email: "",
     password: "",
-  })
+  });
+  const [ isReadyForSubmit, setIsReadyForSubmit ] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,23 +20,28 @@ function Register ({
     setSubmitData({
       ...submitData,
       [name]: value,
-    })
+    });
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!submitData.name || !submitData.email || !submitData.password) {
-      return
-    }
-
     handleRegister(submitData)
-    setSubmitData({
-      name: "",
-      email: "",
-      password: "",
-    })
+      setSubmitData({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setIsReadyForSubmit(false);
   }
+
+  useEffect(() => {
+    if (regForName.test(submitData.name) && reqForEmail.test(submitData.email) && submitData.password) {
+      setIsReadyForSubmit(true);
+    } else {
+      setIsReadyForSubmit(false);
+    }
+  }, [ submitData ])
 
   return(
     <Sign
@@ -44,6 +52,7 @@ function Register ({
       link="/signin"
       formName="register-form"
       handleSubmit={handleSubmit}
+      isReadyForSubmit={isReadyForSubmit}
     >
       <label className="sign__label">
         Имя
@@ -57,7 +66,10 @@ function Register ({
         Пароль
         <input className="sign__input" placeholder="Пароль" name="password" type="password" id="password" required minLength="2" maxLength="30" onChange={handleChange} />
       </label>
-      <span className="sign__error">Что-то пошло не так...</span>
+      {isReadyForSubmit
+        ? ""
+        : <span className="sign__error">Что-то пошло не так...</span>
+      }
     </Sign>
   )
 }

@@ -3,7 +3,7 @@ import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard"
 
 import './MoviesCardList.css'
-import arr from '../../utils/const'
+import { arr } from '../../utils/const'
 
 function MoviesCardList () {
   return (
