@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import "./Profile.css"
+
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 import Header from "../Header/Header"
 
@@ -9,6 +11,8 @@ function Profile ({
   email,
 }) {
   const [isEdit, setIsEdit] = useState(false);
+
+  const currentUser = useContext(CurrentUserContext)
 
   const handleOpen = () => {
     setIsEdit(true)
@@ -24,21 +28,21 @@ function Profile ({
       <main>
         <section>
           <form className="profile" name="profile-form">
-            <h1 className="profile__title">{`Привет, ${name}`}</h1>
+            <h1 className="profile__title">{`Привет, ${currentUser.name}`}</h1>
             <div className="profile__container">
               <div className="profile__info-container">
                 <h2 className="profile__info-title">Имя</h2>
                 {isEdit
-                ? <input className="profile__info-value" placeholder="Имя" name="name" type="text" id="name" value={name} required minLength="2" maxLength="30" />
-                : <p className="profile__info-value">{name}</p>
+                ? <input className="profile__info-value" placeholder="Имя" name="name" type="text" id="name" defaultValue={currentUser.name} required minLength="2" maxLength="30" />
+                : <p className="profile__info-value">{currentUser.name}</p>
                 }
                 
               </div>
               <div className="profile__info-container">
                 <h2 className="profile__info-title">E-mail</h2>
                 {isEdit
-                ? <input className="profile__info-value" placeholder="Почта" name="email" type="email" id="email" value={email} required minLength="2" maxLength="30" />
-                : <p className="profile__info-value">{email}</p>
+                ? <input className="profile__info-value" placeholder="Почта" name="email" type="email" id="email" defaultValue={currentUser.email} required minLength="2" maxLength="30" />
+                : <p className="profile__info-value">{currentUser.email}</p>
                 }
               </div>
             </div>
