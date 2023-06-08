@@ -7,6 +7,8 @@ import auth from "../../utils/AuthApi";
 import api from "../../utils/MainApi";
 import getMovies from "../../utils/MoviesApi"
 
+import { CurrentUserContext } from '../../contexts/CurrentUserContext'
+
 import ProtectedRoute from '../ProtectedRoute';
 import Login from '../Sign/Login/Login'
 import Register from '../Sign/Register/Register'
@@ -15,8 +17,6 @@ import Movies from '../Movies/Movies'
 import SavedMovies from '../SavedMovies/SavedMovies'
 import Profile from '../Profile/Profile'
 import NotFound from '../NotFound/NotFound'
-
-import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
 function App() {
   const navigate = useNavigate();
@@ -67,15 +67,17 @@ function App() {
     api.setHeaders("")
     localStorage.removeItem("JWT")
     navigate("/")
+    window.location.reload();
   }
 
   useEffect(() => {
     checkToken();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
     <>
-      <CurrentUserContext.Provider value={currentUser}>
+      <CurrentUserContext.Provider value={{isLoggedIn, currentUser}}>
         <Routes>
           <Route
             exact path='/signin'

@@ -13,7 +13,7 @@ function Profile ({
   logOut,
   setCurrentUser,
 }) {
-  const currentUser = useContext(CurrentUserContext);
+  const { currentUser } = useContext(CurrentUserContext);
 
   const [isEdit, setIsEdit] = useState(false);
   const [ inputValues, setInputValues ] = useState({
