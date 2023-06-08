@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import './App.css'
 
@@ -19,6 +19,8 @@ import NotFound from '../NotFound/NotFound'
 import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
 function App() {
+  const navigate = useNavigate();
+
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({
     _id: '',
@@ -26,7 +28,44 @@ function App() {
     email: ''
   });
 
-  // auth.login("test1@mail.ru", "1234")
+  const handleRegister = (userData) => {
+    auth.register(userData)
+      .then(() => {
+        handleLogin({
+          email: userData.email,
+          password: userData.password,
+        });
+      })
+  }
+
+  const handleLogin = (userData) => {
+    auth.login(userData)
+      .then((data) => {
+        api.setHeaders(data.token);
+        checkToken();
+      })
+  }
+
+  const checkToken = () => {
+    if (localStorage.getItem("JWT")) {
+      api.getMe()
+        .then((data) => {
+          if (data) {
+            setCurrentUser({
+              _id: data._id,
+              name: data.name,
+              email: data.email,
+            });
+            setIsLoggedIn(true);
+            navigate('/movies');
+          }
+        })
+    }
+  }
+
+  useEffect(() => {
+    checkToken();
+  }, [])
 
   return (
     <>
@@ -35,13 +74,17 @@ function App() {
           <Route
             exact path='/signin'
             element={
-              <Login />
+              <Login
+                handleLogin={handleLogin}
+              />
             }
           />
           <Route
             exact path='/signup'
             element={
-              <Register />
+              <Register
+                handleRegister={handleRegister}
+              />
             }
           />
           <Route

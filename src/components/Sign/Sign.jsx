@@ -12,6 +12,7 @@ function Sign ({
   linkText,
   link,
   formName,
+  handleSubmit,
   children,
 }) {
   return (
@@ -21,7 +22,7 @@ function Sign ({
           <img src={logo} alt="Логотип" />
         </Link>
         <h1 className="sign__title">{title}</h1>
-        <form name={formName} className="sign__form" noValidate>
+        <form name={formName} className="sign__form" noValidate onSubmit={handleSubmit}>
           {children}
           <button className={`sign__button ${buttonTitle === "Войти" && "sign__button_login"}`} type="submit">{buttonTitle}</button>
         </form>
