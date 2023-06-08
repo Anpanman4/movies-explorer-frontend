@@ -114,6 +114,16 @@
   padding: 13px 0 15px;
 }
 
+.profile__button_unactive {
+  background-color: #F8F8F8;
+  color: #000;
+}
+
+.profile__button_unactive:hover {
+  cursor: default;
+  opacity: 1;
+}
+
 @media screen and (max-width: 768px) {
   .profile__title {
     margin-top: 236px;

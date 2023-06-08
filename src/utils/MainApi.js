@@ -21,11 +21,11 @@ class MainApi {
       .then(handleResponse)
   }
 
-  patchMe = (name, email) => {
+  patchMe = (userData) => {
     return fetch(`${this._url}/users/me`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify({name, email})
+      body: JSON.stringify(userData)
     }) 
       .then(handleResponse)
       .then((data) => {

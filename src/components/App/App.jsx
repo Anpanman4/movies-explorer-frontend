@@ -63,6 +63,12 @@ function App() {
     }
   }
 
+  const logOut = () => {
+    api.setHeaders("")
+    localStorage.removeItem("JWT")
+    navigate("/")
+  }
+
   useEffect(() => {
     checkToken();
   }, [])
@@ -115,7 +121,9 @@ function App() {
             exact path='/profile'
             element={
               <ProtectedRoute
+                logOut={logOut}
                 isLoggedIn={isLoggedIn}
+                setCurrentUser={setCurrentUser}
                 component={Profile}
               />
             }
