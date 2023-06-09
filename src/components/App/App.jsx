@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import './App.css'
-
 import auth from "../../utils/AuthApi";
 import api from "../../utils/MainApi";
 import getMovies from "../../utils/MoviesApi"
 
 import { CurrentUserContext } from '../../contexts/CurrentUserContext'
-
 import ProtectedRoute from '../ProtectedRoute';
 import Login from '../Sign/Login/Login'
 import Register from '../Sign/Register/Register'
@@ -20,6 +18,7 @@ import NotFound from '../NotFound/NotFound'
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({
@@ -31,6 +30,7 @@ function App() {
   const [currentCards, setCurrentCards] = useState([]);
   const [isShortMovie, setIsShortMovie] = useState(false);
   const [savedCards, setSavedCards] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const saveCard = (film) => {
     api.createFilm(film)
@@ -55,8 +55,10 @@ function App() {
   }
 
   const searchCards = (keyword) => {
-    // eslint-disable-next-line array-callback-return
-    const result = allCards.filter((card) => {
+    setIsLoading(true);
+    const arr = location.pathname === "/movies" ? allCards : savedCards;
+    const func = location.pathname === "/movies" ? setCurrentCards : setSavedCards;
+    const result = arr.filter((card) => {
       if (card.nameRU.toLowerCase().indexOf(keyword.toLowerCase()) > -1) {
         if (isShortMovie) {
           if (card.duration <= 40) return card
@@ -65,7 +67,8 @@ function App() {
         }
       };
     });
-    setCurrentCards(result);
+    setIsLoading(false);
+    func(result);
   }
 
   const handleRegister = (userData) => {
@@ -157,6 +160,7 @@ function App() {
             element={
               <ProtectedRoute
                 isLoggedIn={isLoggedIn}
+                isLoading={isLoading}
                 currentCards={currentCards}
                 searchCards={searchCards}
                 isShortMovie={isShortMovie}
@@ -171,8 +175,11 @@ function App() {
             exact path='/saved-movies'
             element={
               <ProtectedRoute
-                savedCards={savedCards}
                 isLoggedIn={isLoggedIn}
+                savedCards={savedCards}
+                searchCards={searchCards}
+                isShortMovie={isShortMovie}
+                setIsShortMovie={setIsShortMovie}
                 deleteCard={deleteCard}
                 component={SavedMovies}
               />

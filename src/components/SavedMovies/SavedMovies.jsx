@@ -10,12 +10,19 @@ import "./SavedMovies.css"
 function SavedMovies ({
   savedCards,
   deleteCard,
+  searchCards,
+  isShortMovie,
+  setIsShortMovie,
 }) {
   return (
     <>
       <Header />
       <main className="saved-movies">
-        <SearchForm />
+        <SearchForm
+          searchCards={searchCards}
+          isShortMovie={isShortMovie}
+          setIsShortMovie={setIsShortMovie}
+        />
         <MoviesCardList
           currentCards={savedCards}
           deleteCard={deleteCard}

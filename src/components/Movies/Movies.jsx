@@ -7,6 +7,7 @@ import More from "../More/More"
 import Footer from "../Footer/Footer"
 
 function Movies({
+  isLoading,
   currentCards,
   searchCards,
   isShortMovie,
@@ -24,6 +25,7 @@ function Movies({
           setIsShortMovie={setIsShortMovie}
         />
         <MoviesCardList
+          isLoading={isLoading}
           currentCards={currentCards}
           saveCard={saveCard}
           isSaved={false}
