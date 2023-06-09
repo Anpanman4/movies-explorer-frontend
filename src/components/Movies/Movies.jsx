@@ -11,6 +11,8 @@ function Movies({
   searchCards,
   isShortMovie,
   setIsShortMovie,
+  saveCard,
+  deleteCard,
 }) {
   return (
     <>
@@ -23,7 +25,9 @@ function Movies({
         />
         <MoviesCardList
           currentCards={currentCards}
+          saveCard={saveCard}
           isSaved={false}
+          deleteCard={deleteCard}
         />
         <More />
       </main>

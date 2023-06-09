@@ -32,6 +32,28 @@ function App() {
   const [isShortMovie, setIsShortMovie] = useState(false);
   const [savedCards, setSavedCards] = useState([])
 
+  const saveCard = (film) => {
+    api.createFilm(film)
+      .then((data) => {
+        setSavedCards([
+          ...savedCards,
+          data
+        ])
+      })
+  }
+
+  const deleteCard = (id) => {
+    api.deleteFilm(id)
+      .then((data) => {
+        const newArr = savedCards.filter((card) => {
+          if (!(card._id === data._id)) {
+            return card;
+          }
+        });
+        setSavedCards(newArr);
+      })
+  }
+
   const searchCards = (keyword) => {
     // eslint-disable-next-line array-callback-return
     const result = allCards.filter((card) => {
@@ -106,7 +128,7 @@ function App() {
 
   return (
     <>
-      <CurrentUserContext.Provider value={{isLoggedIn, currentUser}}>
+      <CurrentUserContext.Provider value={{isLoggedIn, currentUser, savedCards}}>
         <Routes>
           <Route
             exact path='/signin'
@@ -139,6 +161,8 @@ function App() {
                 searchCards={searchCards}
                 isShortMovie={isShortMovie}
                 setIsShortMovie={setIsShortMovie}
+                saveCard={saveCard}
+                deleteCard={deleteCard}
                 component={Movies}
               />
             }
@@ -149,6 +173,7 @@ function App() {
               <ProtectedRoute
                 savedCards={savedCards}
                 isLoggedIn={isLoggedIn}
+                deleteCard={deleteCard}
                 component={SavedMovies}
               />
             }

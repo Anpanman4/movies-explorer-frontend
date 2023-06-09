@@ -9,6 +9,7 @@ import "./SavedMovies.css"
 
 function SavedMovies ({
   savedCards,
+  deleteCard,
 }) {
   return (
     <>
@@ -17,6 +18,7 @@ function SavedMovies ({
         <SearchForm />
         <MoviesCardList
           currentCards={savedCards}
+          deleteCard={deleteCard}
           isSaved={true}
         />
       </main>

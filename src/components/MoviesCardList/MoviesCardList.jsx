@@ -8,6 +8,8 @@ import './MoviesCardList.css'
 function MoviesCardList ({
   currentCards,
   isSaved,
+  saveCard,
+  deleteCard,
 }) {
   return (
     <section>
@@ -15,16 +17,19 @@ function MoviesCardList ({
         {isSaved
         ? currentCards.map((card) => (
             <SavedMovieCard
-              key={card.id}
+              key={card._id}
               card={card}
               isSaved={isSaved}
+              deleteCard={deleteCard}
             />
           ))
         : currentCards.map((card) => (
             <DefaultMovieCard
               key={card.id}
+              saveCard={saveCard}
               card={card}
               isSaved={isSaved}
+              deleteCard={deleteCard}
             />
         ))
         }

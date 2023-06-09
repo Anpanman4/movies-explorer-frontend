@@ -1,4 +1,5 @@
 .movie {
+  max-width: 360px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -73,12 +74,20 @@
 }
 
 @media screen and (max-width: 984px) {
+  .movie {
+    max-width: 342px;
+  }
+
   .movie__img {
     height: 227px;
   }
 }
 
 @media screen and (max-width: 525px) {
+  .movie {
+    max-width: 300px;
+  }
+
   .movie__container {
     margin: 14px;
   }
