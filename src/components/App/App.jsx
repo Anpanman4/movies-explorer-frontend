@@ -25,8 +25,26 @@ function App() {
   const [currentUser, setCurrentUser] = useState({
     _id: '',
     name: '',
-    email: ''
+    email: '',
   });
+  const [allCards, setAllCards] = useState([]);
+  const [currentCards, setCurrentCards] = useState([]);
+  const [isShortMovie, setIsShortMovie] = useState(false);
+  const [savedCards, setSavedCards] = useState([])
+
+  const searchCards = (keyword) => {
+    // eslint-disable-next-line array-callback-return
+    const result = allCards.filter((card) => {
+      if (card.nameRU.toLowerCase().indexOf(keyword.toLowerCase()) > -1) {
+        if (isShortMovie) {
+          if (card.duration <= 40) return card
+        } else {
+          return card
+        }
+      };
+    });
+    setCurrentCards(result);
+  }
 
   const handleRegister = (userData) => {
     auth.register(userData)
@@ -71,6 +89,17 @@ function App() {
   }
 
   useEffect(() => {
+    if (isLoggedIn) {
+      getMovies()
+        .then((cards) => setAllCards(cards))
+      api.getFilms()
+        .then((cards) => {
+          setSavedCards(cards.data)
+        })
+    }
+  }, [isLoggedIn])
+
+  useEffect(() => {
     checkToken();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -106,6 +135,10 @@ function App() {
             element={
               <ProtectedRoute
                 isLoggedIn={isLoggedIn}
+                currentCards={currentCards}
+                searchCards={searchCards}
+                isShortMovie={isShortMovie}
+                setIsShortMovie={setIsShortMovie}
                 component={Movies}
               />
             }
@@ -114,6 +147,7 @@ function App() {
             exact path='/saved-movies'
             element={
               <ProtectedRoute
+                savedCards={savedCards}
                 isLoggedIn={isLoggedIn}
                 component={SavedMovies}
               />

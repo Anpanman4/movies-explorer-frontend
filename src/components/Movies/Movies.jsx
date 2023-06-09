@@ -6,13 +6,25 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList"
 import More from "../More/More"
 import Footer from "../Footer/Footer"
 
-function Movies() {
+function Movies({
+  currentCards,
+  searchCards,
+  isShortMovie,
+  setIsShortMovie,
+}) {
   return (
     <>
       <Header />
       <main>
-        <SearchForm />
-        <MoviesCardList />
+        <SearchForm
+          searchCards={searchCards}
+          isShortMovie={isShortMovie}
+          setIsShortMovie={setIsShortMovie}
+        />
+        <MoviesCardList
+          currentCards={currentCards}
+          isSaved={false}
+        />
         <More />
       </main>
       <Footer />

@@ -1,21 +1,32 @@
 import React from "react";
 
-import MoviesCard from "../MoviesCard/MoviesCard"
+import DefaultMovieCard from "../MoviesCard/DefaultMovieCard/DefaultMovieCard"
+import SavedMovieCard from "../MoviesCard/SavedMovieCard/SavedMovieCard";
 
 import './MoviesCardList.css'
-import { arr } from '../../utils/const'
 
-function MoviesCardList () {
+function MoviesCardList ({
+  currentCards,
+  isSaved,
+}) {
   return (
     <section>
       <ul className="movie-list">
-        {
-          arr.map((card) => (
-            <MoviesCard
-              key={card._id}
+        {isSaved
+        ? currentCards.map((card) => (
+            <SavedMovieCard
+              key={card.id}
               card={card}
+              isSaved={isSaved}
             />
           ))
+        : currentCards.map((card) => (
+            <DefaultMovieCard
+              key={card.id}
+              card={card}
+              isSaved={isSaved}
+            />
+        ))
         }
       </ul>
     </section>

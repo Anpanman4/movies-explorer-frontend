@@ -22,8 +22,11 @@
   font-size: 15px;
   line-height: 1.2;
   color: #FFFFFF;
-  margin: 0;
+  margin: 0 10px 0 0;
   padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .movie__time {
@@ -35,6 +38,7 @@
   color: #8B8B8B;
   margin: 0;
   padding: 0;
+  white-space: nowrap;
 }
 
 .movie__img {

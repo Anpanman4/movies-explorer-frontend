@@ -7,13 +7,18 @@ import Footer from "../Footer/Footer";
 
 import "./SavedMovies.css"
 
-function SavedMovies () {
+function SavedMovies ({
+  savedCards,
+}) {
   return (
     <>
       <Header />
       <main className="saved-movies">
         <SearchForm />
-        <MoviesCardList />
+        <MoviesCardList
+          currentCards={savedCards}
+          isSaved={true}
+        />
       </main>
       <Footer />
     </>
