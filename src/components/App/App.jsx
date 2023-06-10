@@ -74,6 +74,7 @@ function App() {
 
     const result = searchMoviesByKeyword(allMovies, keyword);
     setCurrentCards(result);
+    localStorage.setItem("cards", JSON.stringify(result))
 
     setIsSearch(true);
     setIsLoading(false);
@@ -122,6 +123,7 @@ function App() {
     });
     api.setHeaders("")
     localStorage.removeItem("JWT")
+    localStorage.removeItem("cards")
     navigate("/")
     window.location.reload();
   }
@@ -133,13 +135,17 @@ function App() {
       api.getFilms()
         .then((cards) => {
           setSavedCards(cards.data)
+          const savedCards = JSON.parse(localStorage.getItem("cards"));
+          if (savedCards) {
+            setCurrentCards(savedCards);
+            setIsSearch(true);
+          }
         })
     }
   }, [isLoggedIn])
 
   useEffect(() => {
     checkToken();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
