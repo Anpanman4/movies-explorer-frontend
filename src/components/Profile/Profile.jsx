@@ -30,6 +30,7 @@ function Profile ({
     e.preventDefault();
 
     if (inputValues.name === currentUser.name && inputValues.email === currentUser.email) {
+      setIsEdit(false);
       return
     }
 

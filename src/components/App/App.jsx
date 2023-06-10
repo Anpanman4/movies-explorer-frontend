@@ -86,6 +86,14 @@ function App() {
     setIsLoading(false);
   }
 
+  const searchSaveCards = (keyword) => {
+    setIsLoading(true);
+    const result = searchMoviesByKeyword(savedCards, keyword);
+    setSavedCards(result);
+    setIsSearch(true);
+    setIsLoading(false);
+  }
+
   const handleRegister = (userData) => {
     auth.register(userData)
       .then(() => {
@@ -204,7 +212,7 @@ function App() {
               <ProtectedRoute
                 isLoggedIn={isLoggedIn}
                 savedCards={savedCards}
-                searchCards={searchCards}
+                searchCards={searchSaveCards}
                 isShortMovie={isShortMovie}
                 setIsShortMovie={setIsShortMovie}
                 deleteCard={deleteCard}
