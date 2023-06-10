@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router";
 
 import DefaultMovieCard from "../MoviesCard/DefaultMovieCard/DefaultMovieCard"
 import SavedMovieCard from "../MoviesCard/SavedMovieCard/SavedMovieCard";
@@ -14,9 +15,11 @@ function MoviesCardList ({
   isSearch,
   deleteCard,
 }) {
+  const location = useLocation();
+
   return (
     <>
-    {isSearch
+    {isSearch || location.pathname === "/saved-movies"
     ? <section>
         {isLoading
           ? <Preloader />

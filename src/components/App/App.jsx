@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import './App.css'
 import auth from "../../utils/AuthApi";
@@ -18,7 +18,6 @@ import NotFound from '../NotFound/NotFound'
 
 function App() {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({
@@ -26,12 +25,12 @@ function App() {
     name: '',
     email: '',
   });
-  const [allCards, setAllCards] = useState([]);
-  const [currentCards, setCurrentCards] = useState([]);
   const [isShortMovie, setIsShortMovie] = useState(false);
-  const [savedCards, setSavedCards] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-  const [isSearch, setIsSearch] = useState(false)
+  const [savedCards, setSavedCards] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
+  const [allMovies, setAllMovies] = useState([]);
+  const [currentCards, setCurrentCards] = useState([]);
 
   const saveCard = (film) => {
     api.createFilm(film)
@@ -55,25 +54,29 @@ function App() {
       })
   }
 
-  const searchCards = (keyword) => {
-    setIsSearch(true)
-    setIsLoading(true);
-    const arr = location.pathname === "/movies" ? allCards : savedCards;
-    const func = location.pathname === "/movies" ? setCurrentCards : setSavedCards;
-    const result = arr.filter((card) => {
-      if (card.nameRU.toLowerCase().indexOf(keyword.toLowerCase()) > -1) {
+  const searchMoviesByKeyword = (movies, keyword) => {
+    let foundMovies = [];
+
+    movies.forEach((movie) => {
+      if (movie.nameRU.toLowerCase().indexOf(keyword.toLowerCase()) > -1) {
         if (isShortMovie) {
-          if (card.duration <= 40) return card
+          movie.duration <= 40 && foundMovies.push(movie);
         } else {
-          return card
+          foundMovies.push(movie);
         }
-      };
-    });
+      }
+    })
+    return foundMovies;
+  }
+
+  const searchCards = (keyword) => {
+    setIsLoading(true);
+
+    const result = searchMoviesByKeyword(allMovies, keyword);
+    setCurrentCards(result);
+
+    setIsSearch(true);
     setIsLoading(false);
-    if (result.length === 0) {
-      console.log('aga')
-    }
-    func(result);
   }
 
   const handleRegister = (userData) => {
@@ -112,6 +115,11 @@ function App() {
   }
 
   const logOut = () => {
+    setCurrentUser({
+      _id: '',
+      name: '',
+      email: '',
+    });
     api.setHeaders("")
     localStorage.removeItem("JWT")
     navigate("/")
@@ -121,7 +129,7 @@ function App() {
   useEffect(() => {
     if (isLoggedIn) {
       getMovies()
-        .then((cards) => setAllCards(cards))
+        .then((data) => setAllMovies(data))
       api.getFilms()
         .then((cards) => {
           setSavedCards(cards.data)
@@ -165,14 +173,14 @@ function App() {
             element={
               <ProtectedRoute
                 isLoggedIn={isLoggedIn}
-                isLoading={isLoading}
+                isSearch={isSearch}
                 currentCards={currentCards}
+                isLoading={isLoading}
                 searchCards={searchCards}
                 isShortMovie={isShortMovie}
                 setIsShortMovie={setIsShortMovie}
                 saveCard={saveCard}
                 deleteCard={deleteCard}
-                isSearch={isSearch}
                 component={Movies}
               />
             }

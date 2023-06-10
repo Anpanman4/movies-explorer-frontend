@@ -26,11 +26,11 @@ function Movies({
           setIsShortMovie={setIsShortMovie}
         />
         <MoviesCardList
-          isSearch={isSearch}
           isLoading={isLoading}
           currentCards={currentCards}
           saveCard={saveCard}
           isSaved={false}
+          isSearch={isSearch}
           deleteCard={deleteCard}
         />
         <More />

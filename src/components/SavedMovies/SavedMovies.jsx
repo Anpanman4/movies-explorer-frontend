@@ -12,6 +12,7 @@ function SavedMovies ({
   deleteCard,
   searchCards,
   isShortMovie,
+  isSearch,
   setIsShortMovie,
 }) {
   return (
@@ -25,6 +26,7 @@ function SavedMovies ({
         />
         <MoviesCardList
           currentCards={savedCards}
+          isSearch={isSearch}
           deleteCard={deleteCard}
           isSaved={true}
         />
