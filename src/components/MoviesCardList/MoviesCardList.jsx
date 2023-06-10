@@ -11,35 +11,40 @@ function MoviesCardList ({
   currentCards,
   isSaved,
   saveCard,
+  isSearch,
   deleteCard,
 }) {
   return (
-    <section>
-      {isLoading
-        ? <Preloader />
-        : <ul className="movie-list">
-            {isSaved
-            ? currentCards.map((card) => (
-                <SavedMovieCard
-                  key={card._id}
-                  card={card}
-                  isSaved={isSaved}
-                  deleteCard={deleteCard}
-                />
+    <>
+    {isSearch
+    ? <section>
+        {isLoading
+          ? <Preloader />
+          : <ul className="movie-list">
+              {isSaved
+              ? currentCards.map((card) => (
+                  <SavedMovieCard
+                    key={card._id}
+                    card={card}
+                    isSaved={isSaved}
+                    deleteCard={deleteCard}
+                  />
+                ))
+              : currentCards.map((card) => (
+                  <DefaultMovieCard
+                    key={card.id}
+                    saveCard={saveCard}
+                    card={card}
+                    isSaved={isSaved}
+                    deleteCard={deleteCard}
+                  />
               ))
-            : currentCards.map((card) => (
-                <DefaultMovieCard
-                  key={card.id}
-                  saveCard={saveCard}
-                  card={card}
-                  isSaved={isSaved}
-                  deleteCard={deleteCard}
-                />
-            ))
-            }
-          </ul>
-      }
-    </section>
+              }
+            </ul>
+        }
+      </section>
+    : ""}
+    </>
   )
 }
 

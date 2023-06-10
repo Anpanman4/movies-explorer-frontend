@@ -31,6 +31,7 @@ function App() {
   const [isShortMovie, setIsShortMovie] = useState(false);
   const [savedCards, setSavedCards] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [isSearch, setIsSearch] = useState(false)
 
   const saveCard = (film) => {
     api.createFilm(film)
@@ -55,6 +56,7 @@ function App() {
   }
 
   const searchCards = (keyword) => {
+    setIsSearch(true)
     setIsLoading(true);
     const arr = location.pathname === "/movies" ? allCards : savedCards;
     const func = location.pathname === "/movies" ? setCurrentCards : setSavedCards;
@@ -68,6 +70,9 @@ function App() {
       };
     });
     setIsLoading(false);
+    if (result.length === 0) {
+      console.log('aga')
+    }
     func(result);
   }
 
@@ -167,6 +172,7 @@ function App() {
                 setIsShortMovie={setIsShortMovie}
                 saveCard={saveCard}
                 deleteCard={deleteCard}
+                isSearch={isSearch}
                 component={Movies}
               />
             }
