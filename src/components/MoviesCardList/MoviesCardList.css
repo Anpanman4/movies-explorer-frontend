@@ -10,6 +10,11 @@
   list-style-type: none;
 }
 
+.movie-list__title {
+  text-align: center;
+  color: white;
+}
+
 @media screen and (max-width: 1280px) {
   .movie-list {
     padding: 70px 70px 10px;

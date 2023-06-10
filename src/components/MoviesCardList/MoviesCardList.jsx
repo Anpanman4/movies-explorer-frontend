@@ -14,6 +14,7 @@ function MoviesCardList ({
   isSaved,
   saveCard,
   isSearch,
+  isEmpty,
   deleteCard,
 }) {
   const location = useLocation();
@@ -68,27 +69,31 @@ function MoviesCardList ({
     ? <section>
         {isLoading
           ? <Preloader />
-          : <ul className="movie-list">
-              {isSaved
-              ? renderedMovies.map((card) => (
-                  <SavedMovieCard
-                    key={card._id}
-                    card={card}
-                    isSaved={isSaved}
-                    deleteCard={deleteCard}
-                  />
+          : isEmpty
+            ? <ul className="movie-list">
+                <span className="movie-list__title">Ничего не найдено</span>
+              </ul>
+            : <ul className="movie-list">
+                {isSaved
+                ? renderedMovies.map((card) => (
+                    <SavedMovieCard
+                      key={card._id}
+                      card={card}
+                      isSaved={isSaved}
+                      deleteCard={deleteCard}
+                    />
+                  ))
+                : renderedMovies.map((card) => (
+                    <DefaultMovieCard
+                      key={card.id}
+                      saveCard={saveCard}
+                      card={card}
+                      isSaved={isSaved}
+                      deleteCard={deleteCard}
+                    />
                 ))
-              : renderedMovies.map((card) => (
-                  <DefaultMovieCard
-                    key={card.id}
-                    saveCard={saveCard}
-                    card={card}
-                    isSaved={isSaved}
-                    deleteCard={deleteCard}
-                  />
-              ))
-              }
-            </ul>
+                }
+              </ul>
         }
         { currentCards.length > initialCardsAmount
         ? <More

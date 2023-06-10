@@ -13,6 +13,7 @@ function Movies({
   setIsShortMovie,
   saveCard,
   isSearch,
+  isEmpty,
   deleteCard,
 }) {
   return (
@@ -29,6 +30,7 @@ function Movies({
           currentCards={currentCards}
           saveCard={saveCard}
           isSaved={false}
+          isEmpty={isEmpty}
           isSearch={isSearch}
           deleteCard={deleteCard}
         />

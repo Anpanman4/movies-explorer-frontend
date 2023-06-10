@@ -31,6 +31,7 @@ function App() {
   const [isSearch, setIsSearch] = useState(false);
   const [allMovies, setAllMovies] = useState([]);
   const [currentCards, setCurrentCards] = useState([]);
+  const [isEmpty, setIsEmpty] = useState(true);
 
   const saveCard = (film) => {
     api.createFilm(film)
@@ -73,8 +74,13 @@ function App() {
     setIsLoading(true);
 
     const result = searchMoviesByKeyword(allMovies, keyword);
-    setCurrentCards(result);
-    localStorage.setItem("cards", JSON.stringify(result))
+    if (result.length === 0) {
+      setIsEmpty(true);
+    } else {
+      setIsEmpty(false);
+      setCurrentCards(result);
+      localStorage.setItem("cards", JSON.stringify(result))
+    }
 
     setIsSearch(true);
     setIsLoading(false);
@@ -186,6 +192,7 @@ function App() {
                 isShortMovie={isShortMovie}
                 setIsShortMovie={setIsShortMovie}
                 saveCard={saveCard}
+                isEmpty={isEmpty}
                 deleteCard={deleteCard}
                 component={Movies}
               />
