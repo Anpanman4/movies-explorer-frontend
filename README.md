@@ -5,3 +5,5 @@
 Ссылка на yandex disk с макетом - https://disk.yandex.ru/d/kzk2eWiE3FQDYQ
 
 Ссылка на сайт - https://movies.exp.nomoredomains.monster/
+
+Ссылка на пулреквест - https://github.com/Anpanman4/movies-explorer-frontend/pull/2
