@@ -10,6 +10,7 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import Header from "../Header/Header"
 
 function Profile ({
+  setIsOpenPopupInfo,
   logOut,
   setCurrentUser,
 }) {
@@ -42,6 +43,7 @@ function Profile ({
           email: inputValues.email,
         });
         setIsEdit(false);
+        setIsOpenPopupInfo(true);
       })
       .catch((err) => console.log(err))
   }
@@ -56,12 +58,12 @@ function Profile ({
   }
 
   useEffect(() => {
-    if (reqForEmail.test(inputValues.email) && regForName.test(inputValues.name)) {
+    if (reqForEmail.test(inputValues.email) && regForName.test(inputValues.name) && (currentUser.email !== inputValues.email || currentUser.name !== inputValues.name)) {
       setIsReadyForSubmit(true);
     } else {
       setIsReadyForSubmit(false);
     }
-  }, [inputValues])
+  }, [inputValues, currentUser])
 
   return (
     <>
@@ -88,7 +90,7 @@ function Profile ({
               </div>
             </div>
             {isEdit
-            ? <button className={`profile__button profile__button_submit ${isReadyForSubmit ? "" : "profile__button_unactive"}`} type="submit" onClick={handleSubmit}>Сохранить</button>
+            ? <button className={`profile__button profile__button_submit ${isReadyForSubmit ? "" : "profile__button_unactive"}`} disabled={!isReadyForSubmit} type="submit" onClick={handleSubmit}>Сохранить</button>
             : <>
                 <button className="profile__button profile__button_edit" type="button" onClick={handleOpen}>Редактировать</button>
                 <button className="profile__button profile__button_exit" type="button" onClick={logOut}>Выйти из аккаунта</button>

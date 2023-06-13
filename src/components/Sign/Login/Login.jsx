@@ -18,19 +18,18 @@ function Login ({
 
     setSubmitData({
       ...submitData,
-      [name]: value
+      [name]: value,
     });
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    handleLogin(submitData)
-      setSubmitData({
-        email: "",
-        password: "",
-      });
-      setIsReadyForSubmit(false);
+    handleLogin(submitData, setIsReadyForSubmit)
+    setSubmitData({
+      email: "",
+      password: "",
+    });
   }
 
   useEffect(() => {

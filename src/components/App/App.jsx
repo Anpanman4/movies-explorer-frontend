@@ -15,6 +15,7 @@ import Movies from '../Movies/Movies'
 import SavedMovies from '../SavedMovies/SavedMovies'
 import Profile from '../Profile/Profile'
 import NotFound from '../NotFound/NotFound'
+import InfoTooltip from "../InfoTooltip/InfoTooltip";
 
 function App() {
   const navigate = useNavigate();
@@ -33,6 +34,11 @@ function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [currentCards, setCurrentCards] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
+  const [isOpenPopupInfo, setIsOpenPopupInfo] = useState(false);
+
+  const closeAllPopups = () => {
+    setIsOpenPopupInfo(false)
+  }
 
   const saveCard = (film) => {
     api.createFilm(film)
@@ -72,7 +78,7 @@ function App() {
   }
 
   const searchCards = (keyword) => {
-    console.log(keyword, isShortMovie)
+    keyword = keyword ? keyword : "";
     setIsLoading(true);
 
     const result = searchMoviesByKeyword(allMovies, keyword);
@@ -108,11 +114,12 @@ function App() {
       })
   }
 
-  const handleLogin = (userData) => {
+  const handleLogin = (userData, setIsReadyForSubmit) => {
     auth.login(userData)
       .then((data) => {
         api.setHeaders(data.token);
         checkToken();
+        setIsReadyForSubmit(false);
       })
   }
 
@@ -162,6 +169,12 @@ function App() {
       setIsShortMovie(JSON.parse(localStorage.getItem("isShort")))
     }
   }, [isLoggedIn])
+
+  useEffect(() => {
+    const keyword = localStorage.getItem('keyword') === null ? "" : localStorage.getItem('keyword')
+    const result = searchMoviesByKeyword(allMovies, keyword)
+    setCurrentCards(result)
+  }, [isShortMovie])
 
   useEffect(() => {
     checkToken();
@@ -229,6 +242,7 @@ function App() {
             exact path='/profile'
             element={
               <ProtectedRoute
+                setIsOpenPopupInfo={setIsOpenPopupInfo}
                 logOut={logOut}
                 isLoggedIn={isLoggedIn}
                 setCurrentUser={setCurrentUser}
@@ -243,6 +257,11 @@ function App() {
             }
           />
         </Routes>
+
+        <InfoTooltip
+          isOpened={isOpenPopupInfo}
+          onClose={closeAllPopups}
+        />
       </CurrentUserContext.Provider>
     </>
   );
