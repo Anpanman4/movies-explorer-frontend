@@ -6,6 +6,17 @@ import SavedMovieCard from "../MoviesCard/SavedMovieCard/SavedMovieCard";
 import More from "../More/More"
 import Preloader from "../Preloader/Preloader";
 
+import {
+  tabletResize,
+  mobileResize,
+  defaultNumbersOfCardsFull,
+  defaultNumbersOfCardsTablet,
+  defaultNumbersOfCardsMobile,
+  defaultNumbersOfCardsToAddFull,
+  defaultNumbersOfCardsToAddTablet,
+  defaultNumbersOfCardsToAddMobile,
+} from '../../utils/const';
+
 import './MoviesCardList.css'
 
 function MoviesCardList ({
@@ -20,36 +31,36 @@ function MoviesCardList ({
   const location = useLocation();
   const [initialCardsAmount, setInitialCardsAmount] = useState(() => {
     const size = window.innerWidth;
-    if (size < 545) {
-      return 5;
-    } else if (size < 1096) {
-      return 8;
+    if (size < mobileResize) {
+      return defaultNumbersOfCardsMobile;
+    } else if (size < tabletResize) {
+      return defaultNumbersOfCardsTablet;
     } else {
-      return 12;
+      return defaultNumbersOfCardsFull;
     }
   })
   const [addCardsAmount, setAddMoreCardsAmount] = useState(() => {
     const size = window.innerWidth;
-    if (size < 684) {
-      return 5;
-    } else if (size < 1096) {
-      return 2;
+    if (size < mobileResize) {
+      return defaultNumbersOfCardsToAddMobile;
+    } else if (size < tabletResize) {
+      return defaultNumbersOfCardsToAddTablet;
     } else {
-      return 3;
+      return defaultNumbersOfCardsToAddFull;
     }
   })
 
   const handleResize = () =>{
     const size = window.innerWidth;
-    if (size < 684) {
-      setInitialCardsAmount(5);
-      setAddMoreCardsAmount(5);
-    } else if (size < 1096) {
-      setInitialCardsAmount(8);
-      setAddMoreCardsAmount(2);
+    if (size < mobileResize) {
+      setInitialCardsAmount(defaultNumbersOfCardsMobile);
+      setAddMoreCardsAmount(defaultNumbersOfCardsToAddMobile);
+    } else if (size < tabletResize) {
+      setInitialCardsAmount(defaultNumbersOfCardsTablet);
+      setAddMoreCardsAmount(defaultNumbersOfCardsToAddTablet);
     } else {
-      setInitialCardsAmount(12);
-      setAddMoreCardsAmount(3);
+      setInitialCardsAmount(defaultNumbersOfCardsFull);
+      setAddMoreCardsAmount(defaultNumbersOfCardsToAddFull);
     }
   }
 
