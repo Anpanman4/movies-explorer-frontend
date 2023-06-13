@@ -27,12 +27,14 @@ function Register ({
     e.preventDefault();
 
     handleRegister(submitData)
-    setSubmitData({
-      name: "",
-      email: "",
-      password: "",
-    });
-    setIsReadyForSubmit(false);
+    setTimeout(() => {
+      setSubmitData({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setIsReadyForSubmit(false);
+    }, 10000)
   }
 
   useEffect(() => {

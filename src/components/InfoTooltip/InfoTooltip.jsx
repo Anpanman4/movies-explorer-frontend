@@ -3,8 +3,9 @@ import React from "react";
 import "./InfoTooltip.css"
 
 import Success from "../../images/Success.svg"
+import Fail from "../../images/Fail.svg"
 
-function InfoTooltip({isOpened, onClose}) {
+function InfoTooltip({isOpened, onClose, isSuccess}) {
   const handleClickOverlay = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -21,8 +22,8 @@ function InfoTooltip({isOpened, onClose}) {
     <div className={`popup ${isOpened ? "popup_opened" : ""}`} tabIndex={-1} onClick={handleClickOverlay} onKeyDown={handleEscape}>
       <div className="popup__container">
         <button className="popup__close-button" type="button" aria-label="Закрыть" onClick={onClose}></button>
-        <img className="popup__alert" src={Success} alt="Успешно" />
-        <h2 className="popup__title-alert">Данные были успешно изменены</h2>
+        <img className="popup__alert" src={isSuccess ? Success : Fail} alt="Успешно" />
+        <h2 className="popup__title-alert">{isSuccess ? "Данные были успешно изменены" : "Данный email уже занят"}</h2>
       </div>
     </div>
   )

@@ -26,10 +26,13 @@ function Login ({
     e.preventDefault();
 
     handleLogin(submitData, setIsReadyForSubmit)
-    setSubmitData({
-      email: "",
-      password: "",
-    });
+    setTimeout(() => {
+      setSubmitData({
+        email: "",
+        password: "",
+      });
+      setIsReadyForSubmit(false);
+    }, 10000)
   }
 
   useEffect(() => {

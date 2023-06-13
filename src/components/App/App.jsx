@@ -34,6 +34,7 @@ function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [currentCards, setCurrentCards] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [isOpenPopupInfo, setIsOpenPopupInfo] = useState(false);
 
   const closeAllPopups = () => {
@@ -48,6 +49,7 @@ function App() {
           data
         ])
       })
+      .catch((err) => console.log(err))
   }
 
   const deleteCard = (id) => {
@@ -60,6 +62,7 @@ function App() {
         });
         setSavedCards(newArr);
       })
+      .catch((err) => console.log(err))
   }
 
   const searchMoviesByKeyword = (movies, keyword) => {
@@ -112,6 +115,11 @@ function App() {
           password: userData.password,
         });
       })
+      .catch((err) => {
+        console.log(err)
+        setIsOpenPopupInfo(true);
+        setIsSuccess(false);
+      })
   }
 
   const handleLogin = (userData, setIsReadyForSubmit) => {
@@ -121,6 +129,7 @@ function App() {
         checkToken();
         setIsReadyForSubmit(false);
       })
+      .catch((err) => console.log(err))
   }
 
   const checkToken = () => {
@@ -137,6 +146,7 @@ function App() {
             location.pathname === "/signin" || location.pathname === "/signup" ? navigate("/movies") : navigate(location.pathname);
           }
         })
+        .catch((err) => console.log(err))
     }
   }
 
@@ -166,6 +176,7 @@ function App() {
             setIsEmpty(false);
           }
         })
+        .catch((err) => console.log(err))
       setIsShortMovie(JSON.parse(localStorage.getItem("isShort")))
     }
   }, [isLoggedIn])
@@ -261,6 +272,7 @@ function App() {
         <InfoTooltip
           isOpened={isOpenPopupInfo}
           onClose={closeAllPopups}
+          isSuccess={isSuccess}
         />
       </CurrentUserContext.Provider>
     </>
