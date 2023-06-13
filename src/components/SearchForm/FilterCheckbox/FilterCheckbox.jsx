@@ -12,7 +12,7 @@ function FilterCheckbox({
 
   return (
     <label className="filtercheckbox">
-      <input className="filtercheckbox__input" name="isShort" type="checkbox" checked={isShortMovie} onChange={handleChange} />
+      <input className="filtercheckbox__input" name="isShort" type="checkbox" defaultChecked={JSON.parse(localStorage.getItem("isShort"))} onChange={handleChange} />
       <span className="filtercheckbox__visible-input"/>
       Короткометражки
     </label>

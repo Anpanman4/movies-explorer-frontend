@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import './App.css'
 import auth from "../../utils/AuthApi";
@@ -18,6 +18,7 @@ import NotFound from '../NotFound/NotFound'
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({
@@ -71,6 +72,7 @@ function App() {
   }
 
   const searchCards = (keyword) => {
+    console.log(keyword, isShortMovie)
     setIsLoading(true);
 
     const result = searchMoviesByKeyword(allMovies, keyword);
@@ -81,6 +83,8 @@ function App() {
       setCurrentCards(result);
       localStorage.setItem("cards", JSON.stringify(result))
     }
+    localStorage.setItem("keyword", keyword);
+    localStorage.setItem("isShort", isShortMovie)
 
     setIsSearch(true);
     setIsLoading(false);
@@ -123,7 +127,7 @@ function App() {
               email: data.email,
             });
             setIsLoggedIn(true);
-            navigate('/movies');
+            location.pathname === "/signin" || location.pathname === "/signup" ? navigate("/movies") : navigate(location.pathname);
           }
         })
     }
@@ -135,10 +139,9 @@ function App() {
       name: '',
       email: '',
     });
-    api.setHeaders("")
-    localStorage.removeItem("JWT")
-    localStorage.removeItem("cards")
-    navigate("/")
+    api.setHeaders("");
+    localStorage.clear();
+    navigate("/");
     window.location.reload();
   }
 
@@ -153,8 +156,10 @@ function App() {
           if (savedCards) {
             setCurrentCards(savedCards);
             setIsSearch(true);
+            setIsEmpty(false);
           }
         })
+      setIsShortMovie(JSON.parse(localStorage.getItem("isShort")))
     }
   }, [isLoggedIn])
 

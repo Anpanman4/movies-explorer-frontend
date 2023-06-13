@@ -20,7 +20,11 @@ function SearchForm ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    searchCards(filmName);
+    if (!filmName) {
+      searchCards(localStorage.getItem("keyword"))
+    } else {
+      searchCards(filmName);
+    }
   }
 
   return (
@@ -29,7 +33,7 @@ function SearchForm ({
         <form name="search-form" className="search-form__container" noValidate onSubmit={handleSubmit}>
           <div className="search-form__input-container">
             <img className="search-form__img" src={search} alt="Поиск" />
-            <input className="search-form__input" placeholder="Фильм" name="filmName" type="text" id="filmName" required minLength="2" maxLength="30" onChange={handleChange} />
+            <input className="search-form__input" placeholder="Фильм" name="filmName" type="text" id="filmName" defaultValue={localStorage.getItem("keyword")} required minLength="2" maxLength="30" onChange={handleChange} />
             <button className="search-form__search-button" type="submit">Найти</button>
           </div>
           <div className="search-form__film-container">
