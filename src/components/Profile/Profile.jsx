@@ -13,6 +13,7 @@ function Profile ({
   setIsOpenPopupInfo,
   logOut,
   setCurrentUser,
+  setIsSuccess,
 }) {
   const { currentUser } = useContext(CurrentUserContext);
 
@@ -43,9 +44,14 @@ function Profile ({
           email: inputValues.email,
         });
         setIsEdit(false);
+        setIsSuccess(true);
         setIsOpenPopupInfo(true);
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        setIsSuccess(false);
+        setIsOpenPopupInfo(false);
+        console.log(err);
+      })
   }
 
   const handleChange = (e) => {

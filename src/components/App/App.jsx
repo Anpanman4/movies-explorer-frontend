@@ -257,6 +257,7 @@ function App() {
                 logOut={logOut}
                 isLoggedIn={isLoggedIn}
                 setCurrentUser={setCurrentUser}
+                setIsSuccess={setIsSuccess}
                 component={Profile}
               />
             }
