@@ -1,9 +1,32 @@
-#Фронтед часть проекта movies-explorer
+# movies-explorer-frontend
 
-Ссылка на макет - https://www.figma.com/file/qztvmlHt7yFPhmBqCdHGqZ/Diplom?type=design&node-id=891%3A3857&t=4nLjFiOPe8nlDKV5-1
+Дипломная работа по созданию интерактивной страницы, на которой пользователи могут искать фильмы по ключевым словам и добавлять их в избранные, которые отображаются в личном кабинете.
 
-Ссылка на yandex disk с макетом - https://disk.yandex.ru/d/kzk2eWiE3FQDYQ
+### Функционал:
++ Авторизация и регистрация пользователей
++ Редактирование профиля
++ Поиск фильмов по ключевым словам
++ Поиск фильмов по критерию
++ Сохрание фильмов в избранное в личном кабинете
 
-Ссылка на сайт - https://movies.exp.nomoredomains.monster/
+### Технологии:
++ HTML5
++ CCS3
++ Адаптивная верстка
++ JavaScript
++ React.js
 
-Ссылка на пулреквест - https://github.com/Anpanman4/movies-explorer-frontend/pull/2
+## Установка и запуск проекта:
+Установить зависимости: `npm i`
+
+Запустить сервер: `npm run start`
+
+## Чеклист:
++ [Критерии диплома веб-разработчика](https://code.s3.yandex.net/web-developer/static/new-program/web-diploma-criteria-2.0/index.html)
+
+## Ссылки:
++ [Макет](https://disk.yandex.ru/d/kzk2eWiE3FQDYQ)
++ [Макет (figma)](https://www.figma.com/file/qztvmlHt7yFPhmBqCdHGqZ/Diplom?type=design&node-id=891%3A3857&t=4nLjFiOPe8nlDKV5-1)
++ [Cайт](https://movies.exp.nomoredomains.monster)
++ [Репозиторий с бэкендом](https://github.com/Anpanman4/movies-explorer-api)
++ [Пулреквест](https://github.com/Anpanman4/movies-explorer-frontend/pull/2)
