@@ -36,7 +36,8 @@ function Login ({
   }
 
   useEffect(() => {
-    if (reqForEmail.test(submitData.email) && submitData.password) {
+    if ((reqForEmail.test(submitData.email) && submitData.password)
+      || (submitData.email.length === 0 && submitData.password.length === 0)) {
       setIsReadyForSubmit(true);
     } else {
       setIsReadyForSubmit(false);

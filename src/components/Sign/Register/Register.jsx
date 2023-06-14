@@ -38,7 +38,8 @@ function Register ({
   }
 
   useEffect(() => {
-    if (regForName.test(submitData.name) && reqForEmail.test(submitData.email) && submitData.password) {
+    if ((regForName.test(submitData.name) && reqForEmail.test(submitData.email) && submitData.password)
+      || (submitData.name.length === 0 && submitData.email.length === 0 && submitData.password.length === 0)) {
       setIsReadyForSubmit(true);
     } else {
       setIsReadyForSubmit(false);

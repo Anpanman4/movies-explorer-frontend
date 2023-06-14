@@ -7,14 +7,14 @@ import More from "../More/More"
 import Preloader from "../Preloader/Preloader";
 
 import {
-  tabletResize,
-  mobileResize,
-  defaultNumbersOfCardsFull,
-  defaultNumbersOfCardsTablet,
-  defaultNumbersOfCardsMobile,
-  defaultNumbersOfCardsToAddFull,
-  defaultNumbersOfCardsToAddTablet,
-  defaultNumbersOfCardsToAddMobile,
+  TABLETRESIZE,
+  MOBILERESIZE,
+  DEFAULTNUMBERSOFCARDSFULL,
+  DEFAULTNUMBERSOFCARDSTABLET,
+  DEFAULTNUMBERSOFCARDSMOBILE,
+  DEFAULTNUMBERSOFCARDSTOADDFULL,
+  DEFAULTNUMBERSOFCARDSTOADDTABLET,
+  DEFAULTNUMBERSOFCARDSTOADDMOBILE,
 } from '../../utils/const';
 
 import './MoviesCardList.css'
@@ -31,36 +31,36 @@ function MoviesCardList ({
   const location = useLocation();
   const [initialCardsAmount, setInitialCardsAmount] = useState(() => {
     const size = window.innerWidth;
-    if (size < mobileResize) {
-      return defaultNumbersOfCardsMobile;
-    } else if (size < tabletResize) {
-      return defaultNumbersOfCardsTablet;
+    if (size < MOBILERESIZE) {
+      return DEFAULTNUMBERSOFCARDSMOBILE;
+    } else if (size < TABLETRESIZE) {
+      return DEFAULTNUMBERSOFCARDSTABLET;
     } else {
-      return defaultNumbersOfCardsFull;
+      return DEFAULTNUMBERSOFCARDSFULL;
     }
   })
   const [addCardsAmount, setAddMoreCardsAmount] = useState(() => {
     const size = window.innerWidth;
-    if (size < mobileResize) {
-      return defaultNumbersOfCardsToAddMobile;
-    } else if (size < tabletResize) {
-      return defaultNumbersOfCardsToAddTablet;
+    if (size < MOBILERESIZE) {
+      return DEFAULTNUMBERSOFCARDSTOADDMOBILE;
+    } else if (size < TABLETRESIZE) {
+      return DEFAULTNUMBERSOFCARDSTOADDTABLET;
     } else {
-      return defaultNumbersOfCardsToAddFull;
+      return DEFAULTNUMBERSOFCARDSTOADDFULL;
     }
   })
 
   const handleResize = () =>{
     const size = window.innerWidth;
-    if (size < mobileResize) {
-      setInitialCardsAmount(defaultNumbersOfCardsMobile);
-      setAddMoreCardsAmount(defaultNumbersOfCardsToAddMobile);
-    } else if (size < tabletResize) {
-      setInitialCardsAmount(defaultNumbersOfCardsTablet);
-      setAddMoreCardsAmount(defaultNumbersOfCardsToAddTablet);
+    if (size < MOBILERESIZE) {
+      setInitialCardsAmount(DEFAULTNUMBERSOFCARDSMOBILE);
+      setAddMoreCardsAmount(DEFAULTNUMBERSOFCARDSTOADDMOBILE);
+    } else if (size < TABLETRESIZE) {
+      setInitialCardsAmount(DEFAULTNUMBERSOFCARDSTABLET);
+      setAddMoreCardsAmount(DEFAULTNUMBERSOFCARDSTOADDTABLET);
     } else {
-      setInitialCardsAmount(defaultNumbersOfCardsFull);
-      setAddMoreCardsAmount(defaultNumbersOfCardsToAddFull);
+      setInitialCardsAmount(DEFAULTNUMBERSOFCARDSFULL);
+      setAddMoreCardsAmount(DEFAULTNUMBERSOFCARDSTOADDFULL);
     }
   }
 

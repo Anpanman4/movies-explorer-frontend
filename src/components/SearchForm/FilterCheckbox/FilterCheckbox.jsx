@@ -8,6 +8,7 @@ function FilterCheckbox({
 }) {
   const handleChange = (e) => {
     setIsShortMovie(e.target.checked)
+    localStorage.setItem("isShort", e.target.checked)
   }
 
   return (

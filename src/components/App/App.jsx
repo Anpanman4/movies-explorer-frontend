@@ -182,9 +182,12 @@ function App() {
   }, [isLoggedIn])
 
   useEffect(() => {
-    const keyword = localStorage.getItem('keyword') === null ? "" : localStorage.getItem('keyword')
-    const result = searchMoviesByKeyword(allMovies, keyword)
-    setCurrentCards(result)
+    if (currentCards.length !== 0) {
+      const keyword = localStorage.getItem('keyword') === null ? "" : localStorage.getItem('keyword')
+      const result = searchMoviesByKeyword(allMovies, keyword)
+      setCurrentCards(result)
+      localStorage.setItem("cards", JSON.stringify(result))
+    }
   }, [isShortMovie])
 
   useEffect(() => {

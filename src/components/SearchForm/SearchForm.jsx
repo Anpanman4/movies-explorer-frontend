@@ -20,10 +20,10 @@ function SearchForm ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!filmName) {
-      searchCards(localStorage.getItem("keyword"))
-    } else {
+    if (filmName || filmName === "") {
       searchCards(filmName);
+    } else {
+      searchCards(localStorage.getItem("keyword"))
     }
   }
 
