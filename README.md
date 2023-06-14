@@ -29,4 +29,3 @@
 + [Макет (figma)](https://www.figma.com/file/qztvmlHt7yFPhmBqCdHGqZ/Diplom?type=design&node-id=891%3A3857&t=4nLjFiOPe8nlDKV5-1)
 + [Cайт](https://movies.exp.nomoredomains.monster)
 + [Репозиторий с бэкендом](https://github.com/Anpanman4/movies-explorer-api)
-+ [Пулреквест](https://github.com/Anpanman4/movies-explorer-frontend/pull/2)
