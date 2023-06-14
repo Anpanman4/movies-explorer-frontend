@@ -12,6 +12,8 @@ function Sign ({
   linkText,
   link,
   formName,
+  handleSubmit,
+  isReadyForSubmit,
   children,
 }) {
   return (
@@ -21,9 +23,15 @@ function Sign ({
           <img src={logo} alt="Логотип" />
         </Link>
         <h1 className="sign__title">{title}</h1>
-        <form name={formName} className="sign__form" noValidate>
+        <form name={formName} className="sign__form" noValidate onSubmit={handleSubmit}>
           {children}
-          <button className={`sign__button ${buttonTitle === "Войти" && "sign__button_login"}`} type="submit">{buttonTitle}</button>
+          <button
+            className={`sign__button ${buttonTitle === "Войти" && "sign__button_login"} ${isReadyForSubmit ? "" : "sign__button_unactive"}`}
+            type="submit"
+            disabled={!isReadyForSubmit}
+          >
+            {buttonTitle}
+          </button>
         </form>
         <p className="sign__link-text">
           {preLinkText}

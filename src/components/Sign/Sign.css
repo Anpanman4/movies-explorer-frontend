@@ -107,6 +107,16 @@
   opacity: .8;
 }
 
+.sign__button_unactive {
+  background-color: #F8F8F8;
+  color: #000;
+}
+
+.sign__button_unactive:hover {
+  cursor: default;
+  opacity: 1;
+}
+
 .sign__button_login {
   margin-top: 157px;
 }

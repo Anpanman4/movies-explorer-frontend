@@ -7,13 +7,29 @@ import Footer from "../Footer/Footer";
 
 import "./SavedMovies.css"
 
-function SavedMovies () {
+function SavedMovies ({
+  savedCards,
+  deleteCard,
+  searchCards,
+  isShortMovie,
+  isSearch,
+  setIsShortMovie,
+}) {
   return (
     <>
       <Header />
       <main className="saved-movies">
-        <SearchForm />
-        <MoviesCardList />
+        <SearchForm
+          searchCards={searchCards}
+          isShortMovie={isShortMovie}
+          setIsShortMovie={setIsShortMovie}
+        />
+        <MoviesCardList
+          currentCards={savedCards}
+          isSearch={isSearch}
+          deleteCard={deleteCard}
+          isSaved={true}
+        />
       </main>
       <Footer />
     </>

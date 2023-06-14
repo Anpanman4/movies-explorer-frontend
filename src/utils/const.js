@@ -1,88 +1,24 @@
-const arr = [
-  {
-    _id: 1,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: false
-  },
-  {
-    _id: 2,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://img3.akspic.ru/previews/5/5/4/1/7/171455/171455-zhivopis-illustracia-art-voda-oblako-500x.jpg",
-    add: false
-  },
-  {
-    _id: 3,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: true
-  },
-  {
-    _id: 4,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: false
-  },
-  {
-    _id: 5,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: true
-  },
-  {
-    _id: 6,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: true
-  },
-  {
-    _id: 7,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: true
-  },
-  {
-    _id: 8,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: false
-  },
-  {
-    _id: 9,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: true
-  },
-  {
-    _id: 10,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: true
-  },
-  {
-    _id: 11,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: false
-  },
-  {
-    _id: 12,
-    name: "погоня",
-    time: "27 минут",
-    src: "https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg",
-    add: true
-  },
-]
+const regForName = /^[а-яёa-z]+(?:[-]{1}[а-яёa-z]*)?$/i;
+const reqForEmail = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
 
-export default arr
+const TABLET_RESIZE = 1096;
+const MOBILE_RESIZE = 684;
+const DEFAULT_NUMBERS_OF_CARDS_FULL = 12;
+const DEFAULT_NUMBERS_OF_CARDS_TABLET = 8;
+const DEFAULT_NUMBERS_OF_CARDS_MOBILE = 5;
+const DEFAULT_NUMBERS_OF_CARDS_TO_ADD_FULL = 3;
+const DEFAULT_NUMBERS_OF_CARDS_TO_ADD_TABLET = 2;
+const DEFAULT_NUMBERS_OF_CARDS_TO_ADD_MOBILE = 5;
+
+export {
+  regForName,
+  reqForEmail,
+  TABLET_RESIZE,
+  MOBILE_RESIZE,
+  DEFAULT_NUMBERS_OF_CARDS_FULL,
+  DEFAULT_NUMBERS_OF_CARDS_TABLET,
+  DEFAULT_NUMBERS_OF_CARDS_MOBILE,
+  DEFAULT_NUMBERS_OF_CARDS_TO_ADD_FULL,
+  DEFAULT_NUMBERS_OF_CARDS_TO_ADD_TABLET,
+  DEFAULT_NUMBERS_OF_CARDS_TO_ADD_MOBILE,
+};

@@ -1,6 +1,7 @@
 .profile {
   max-width: 410px;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   align-items: center;
@@ -112,6 +113,16 @@
   border: 0;
   margin: 223px 0 0;
   padding: 13px 0 15px;
+}
+
+.profile__button_unactive {
+  background-color: #F8F8F8;
+  color: #000;
+}
+
+.profile__button_unactive:hover {
+  cursor: default;
+  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {

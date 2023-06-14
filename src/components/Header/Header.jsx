@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useLocation, Link, NavLink, useNavigate } from "react-router-dom";
 import './Header.css'
 
 import logo from '../../images/logo.svg'
 import icon from '../../images/profile-icon.svg'
 
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+
 import Navigation from "./Navigation/Navigation";
 
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { isLoggedIn } = useContext(CurrentUserContext);
 
   const [isClicked, setIsClicked] = useState(false);
 
@@ -23,7 +26,7 @@ function Header() {
 
   return (
     <>
-      {location.pathname === '/' ? (
+      {!isLoggedIn ? (
       <header className="header header_color_blue">
         <Link to="/" className="header__logo">
           <img src={logo} alt="Логотип" />
